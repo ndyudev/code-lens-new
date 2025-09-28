@@ -10,7 +10,6 @@
 <body>
 <h1 class="text-3xl font-bold underline">
 	Hello world!
-    <h3>Assigment Web Java 3 Servlet Jsp</>
 </h1>
 </body>
 </html>
