@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="OBJECTS" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 209.36 52.11">
+  <!-- Generator: Adobe Illustrator 29.5.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 141)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-family: SVN-BladeRunner, 'SVN-Blade Runner';
+        font-size: 21.09px;
+      }
+
+      .st1 {
+        opacity: .3;
+      }
+
+      .st2 {
+        fill: #606060;
+      }
+
+      .st3 {
+        fill: #ff940f;
+      }
+
+      .st4 {
+        fill: #5d1eff;
+      }
+    </style>
+  </defs>
+  <text class="st0" transform="translate(96.27 18.58)"><tspan class="st2"><tspan x="0" y="0">CODE</tspan></tspan><tspan class="st3" x="0" y="25.31">LENS</tspan><tspan class="st2" x="60.99" y="25.31">NEW</tspan></text>
+  <g>
+    <g>
+      <g>
+        <path class="st4" d="M27.92.23C21.99,10.38,11.51,17.73,0,20.06v12.19c15.73-2.43,30.24-12.21,38.28-25.95L27.92.23Z"/>
+        <path class="st1" d="M22.56,23.13c-7.21-2.56-14.94-3.66-22.56-3.03l2.8,11.63c7.07-1.5,13.81-4.47,19.76-8.6Z"/>
+        <path class="st4" d="M27.92,52.11c-5.93-10.15-16.41-17.5-27.92-19.83v-12.19c15.73,2.43,30.24,12.21,38.28,25.95l-10.36,6.06Z"/>
+      </g>
+      <g>
+        <path class="st4" d="M63.17,52.11c5.93-10.15,16.41-17.5,27.92-19.83v-12.19c-15.73,2.43-30.24,12.21-38.28,25.95l10.36,6.06Z"/>
+        <path class="st1" d="M68.53,29.22c7.21,2.56,14.94,3.66,22.56,3.03l-2.8-11.63c-7.07,1.5-13.81,4.47-19.76,8.6Z"/>
+        <path class="st4" d="M63.17.23c5.93,10.15,16.41,17.5,27.92,19.83v12.19c-15.73-2.43-30.24-12.21-38.28-25.95L63.17.23Z"/>
+      </g>
+    </g>
+    <circle class="st3" cx="45.54" cy="26.17" r="12" transform="translate(12.41 66.94) rotate(-80.78)"/>
+  </g>
+</svg>
