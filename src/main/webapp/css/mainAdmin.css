@@ -1,0 +1,48 @@
+/* Admin layout styles (copied base from user, no slider) */
+@import url("headerUser.css");
+@import url("footerUser.css");
+
+.admin-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-content {
+  padding: 16px 0;
+  flex: 1;
+  /* make content area a bit taller by default */
+  min-height: 480px;
+}
+
+.admin-nav {
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.admin-nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.admin-nav a.active {
+  background: #e5e7eb;
+  font-weight: bold;
+}
+
+

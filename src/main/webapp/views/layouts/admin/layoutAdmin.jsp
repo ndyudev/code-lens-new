@@ -3,23 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://kit.fontawesome.com/f4e3fc99b3.js" crossorigin="anonymous"></script>
-<!-- CSS -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mainUser.css">
 <meta charset="UTF-8">
-<title>Code Lens New</title>
+<title>Admin Panel - CodeLens News</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mainAdmin.css">
+<script src="https://kit.fontawesome.com/f4e3fc99b3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Gọi header -->
-  <jsp:include page="/views/components/user/header.jsp"></jsp:include>
-  
-  <!-- Gọi content và aside -->
-  <div class="main-content">
-    <jsp:include page="/views/components/user/content.jsp"></jsp:include>
-    <jsp:include page="/views/components/user/aside.jsp"></jsp:include>
+  <div class="admin-wrapper">
+    <jsp:include page="/views/components/admin/header.jsp" />
+    <jsp:include page="/views/components/admin/nav.jsp" />
+    <div class="admin-container admin-content">
+      <c:set var="pageParam" value="${empty param.page ? 'dashboard' : param.page}" />
+      <jsp:include page="/views/pages/admin/${pageParam}.jsp" />
+    </div>
+    <jsp:include page="/views/components/admin/footer.jsp" />
   </div>
-  
-  <!-- Gọi footer -->
-  <jsp:include page="/views/components/user/footer.jsp"></jsp:include>
 </body>
 </html>
