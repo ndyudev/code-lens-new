@@ -30,10 +30,12 @@
 
     <!-- Menu giữa -->
     <ul class="menu">
-      <li><a href="#">Trang chủ</a></li>
-      <li><a href="#">Tin tức</a></li>
-      <li><a href="#">Cộng nghệ</a></li>
-      <li><a href="#">Liên hệ</a></li>
+      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=home">Trang chủ</a></li>
+      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=technology">Tin tức</a></li>
+      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=technology">Công nghệ</a></li>
+      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=programming">Lập trình</a></li>
+      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=ai">AI & ML</a></li>
+      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=blockchain">Blockchain</a></li>
     </ul>
 
     <!-- Tìm kiếm phải -->
