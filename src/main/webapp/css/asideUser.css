@@ -1,0 +1,31 @@
+.aside {
+    padding: 20px 0;
+    background: #fff;
+  }
+  .aside .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+    min-width: 220px;
+  }
+  .aside h3 {
+    color: #001a66;
+    margin-bottom: 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  .category-list, .recent-posts {
+    list-style: none;
+    padding: 0;
+  }
+  .category-list li, .recent-posts li {
+    margin-bottom: 10px;
+  }
+  .category-list li a, .recent-posts li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .category-list li a:hover, .recent-posts li a:hover {
+    color: #00aaff;
+  }

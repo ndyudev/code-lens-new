@@ -1,0 +1,15 @@
+/* Import tất cả file con */
+@import url("headerUser.css");
+@import url("footerUser.css");
+@import url("asideUser.css");
+@import url("contentUser.css");
+
+
+.main-content {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+	gap: 20px;
+	flex-wrap: wrap;
+}

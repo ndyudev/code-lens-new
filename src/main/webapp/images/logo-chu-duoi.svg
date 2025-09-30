@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="OBJECTS" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 149.63 82.29">
+  <!-- Generator: Adobe Illustrator 29.5.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 141)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #606060;
+        font-size: 18px;
+      }
+
+      .st1 {
+        opacity: .3;
+      }
+
+      .st2 {
+        font-family: Montserrat-SemiBold, Montserrat;
+        font-weight: 600;
+      }
+
+      .st3 {
+        fill: #ff940f;
+      }
+
+      .st4 {
+        fill: #5d1eff;
+      }
+
+      .st5 {
+        font-family: Montserrat-Light, Montserrat;
+        font-weight: 300;
+      }
+    </style>
+  </defs>
+  <text class="st0" transform="translate(-.23 77.52)"><tspan class="st5" x="0" y="0">CODE</tspan><tspan class="st2" x="54.88" y="0">LENS</tspan><tspan class="st5" x="103.63" y="0">NEW</tspan></text>
+  <g>
+    <g>
+      <path class="st4" d="M60.05,0c-5.93,10.15-16.41,17.5-27.92,19.83v12.19c15.73-2.43,30.24-12.21,38.28-25.95L60.05,0Z"/>
+      <path class="st1" d="M54.68,22.89c-7.21-2.56-14.94-3.66-22.56-3.03l2.8,11.63c7.07-1.5,13.81-4.47,19.76-8.6Z"/>
+      <path class="st4" d="M60.05,51.88c-5.93-10.15-16.41-17.5-27.92-19.83v-12.19c15.73,2.43,30.24,12.21,38.28,25.95l-10.36,6.06Z"/>
+    </g>
+    <g>
+      <path class="st4" d="M95.3,51.88c5.93-10.15,16.41-17.5,27.92-19.83v-12.19c-15.73,2.43-30.24,12.21-38.28,25.95l10.36,6.06Z"/>
+      <path class="st1" d="M100.66,28.98c7.21,2.56,14.94,3.66,22.56,3.03l-2.8-11.63c-7.07,1.5-13.81,4.47-19.76,8.6Z"/>
+      <path class="st4" d="M95.3,0c5.93,10.15,16.41,17.5,27.92,19.83v12.19c-15.73-2.43-30.24-12.21-38.28-25.95l10.36-6.06Z"/>
+    </g>
+  </g>
+  <circle class="st3" cx="77.67" cy="25.94" r="12" transform="translate(39.63 98.45) rotate(-80.78)"/>
+</svg>

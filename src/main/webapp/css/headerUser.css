@@ -1,0 +1,91 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Topbar */
+.topbar {
+  background: #fff;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #333;
+}
+.topbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topbar .left span {
+  margin-right: 20px;
+}
+.topbar .right a {
+  margin-left: 15px;
+  color: #007bff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.topbar .right a:hover {
+  color: #0056b3;
+}
+
+/* Navbar */
+.navbar {
+  background: #001a66;
+  padding: 12px 0;
+}
+.navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo img {
+  height: 45px;
+}
+
+/* Menu giữa */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex: 1;
+}
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.menu li a:hover {
+  color: #00c3ff;
+}
+
+/* Search box phải */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+.search-box button {
+  border: none;
+  background: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
