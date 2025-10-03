@@ -8,18 +8,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Servlet implementation class CodeLensNew
+ * Servlet implementation class AdminServlet
  */
-@WebServlet("/CodeLensNew")
-public class CodeLensNew extends HttpServlet {
+@WebServlet("/AdminServlet")
+public class AdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public CodeLensNew() {
+	public AdminServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -28,17 +27,16 @@ public class CodeLensNew extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Lấy tab từ parameter, mặc định là 'home'
-		String tab = request.getParameter("tab");
-		if (tab == null || tab.isEmpty()) {
-			tab = "home";
+		String page = request.getParameter("page");
+		if (page == null || page.isEmpty()) {
+			page = "dashboard";
 		}
 		
-		// Set tab vào request để JSP có thể sử dụng
-		request.setAttribute("tab", tab);
+		// Set page vào request để JSP có thể sử dụng
+		request.setAttribute("page", page);
 		
-		// Forward đến layout user
-		request.getRequestDispatcher("/views/layouts/user/layoutUser.jsp").forward(request, response);
+		// Forward đến layout admin
+		request.getRequestDispatcher("/views/layouts/admin/layoutAdmin.jsp").forward(request, response);
 	}
 
 	/**
@@ -47,6 +45,7 @@ public class CodeLensNew extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }

@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Admin Panel - CodeLens News</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mainAdmin.css">
+<link rel="icon" href="${pageContext.request.contextPath}/images/codelensnew-logo.svg">
 <script src="https://kit.fontawesome.com/f4e3fc99b3.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -13,7 +14,7 @@
     <jsp:include page="/views/components/admin/header.jsp" />
     <jsp:include page="/views/components/admin/nav.jsp" />
     <div class="admin-container admin-content">
-      <c:set var="pageParam" value="${empty param.page ? 'dashboard' : param.page}" />
+      <c:set var="pageParam" value="${empty page ? 'dashboard' : page}" />
       <jsp:include page="/views/pages/admin/${pageParam}.jsp" />
     </div>
     <jsp:include page="/views/components/admin/footer.jsp" />
