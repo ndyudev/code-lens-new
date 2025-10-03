@@ -30,18 +30,23 @@
 
     <!-- Menu giữa -->
     <ul class="menu">
-      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=home">Trang chủ</a></li>
-      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=technology">Tin tức</a></li>
-      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=technology">Công nghệ</a></li>
-      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=programming">Lập trình</a></li>
-      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=ai">AI & ML</a></li>
-      <li><a href="${pageContext.request.contextPath}/views/layouts/user/layoutUser.jsp?tab=blockchain">Blockchain</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=home">Trang chủ</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=technology">Tin tức</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=technology">Công nghệ</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=programming">Lập trình</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=ai">AI & ML</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=blockchain">Blockchain</a></li>
     </ul>
 
-    <!-- Tìm kiếm phải -->
-    <div class="search-box">
-      <input type="text" placeholder="Tìm kiếm...">
-      <button><i class="fas fa-search"></i></button>
+    <!-- Tìm kiếm và Admin -->
+    <div class="right-section">
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+  	  <div class="admin-link">
+        <a href="${pageContext.request.contextPath}/AdminServlet?page=dashboard">Admin</a>
+      </div> 
     </div>
   </div>
 </header>
