@@ -38,12 +38,10 @@
       <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=blockchain">Blockchain</a></li>
     </ul>
 
-    <!-- Tìm kiếm và Admin -->
-    <div class="right-section">
-      <div class="search-box">
-        <input type="text" placeholder="Tìm kiếm...">
-        <button><i class="fas fa-search"></i></button>
-      </div>
+    <!-- Tìm kiếm phải -->
+    <div class="search-box">
+      <input type="text" placeholder="Tìm kiếm...">
+      <button><i class="fas fa-search"></i></button>
     </div>
   </div>
 </header>
