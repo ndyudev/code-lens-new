@@ -1,139 +1,160 @@
 /* Chỉ áp dụng cho trang login */
 .auth-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
 }
 
 /* Card login */
 .auth-container .auth-card {
-  background: #fff;
-  width: 100%;
-  max-width: 420px;
-  padding: 35px 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  animation: fadeIn 0.4s ease-in-out;
+    background: #fff;
+    width: 100%;
+    max-width: 420px;
+    padding: 35px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 0.4s ease-in-out;
 }
 
 /* Header */
 .auth-container .auth-header {
-  text-align: center;
-  margin-bottom: 25px;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 .auth-container .auth-logo {
-  max-width: 180px;
-  margin-bottom: 15px;
+    max-width: 180px;
+    margin-bottom: 15px;
 }
 
 .auth-container .auth-header h1 {
-  font-size: 22px;
-  font-weight: 600;
-  color: #001a66;
+    font-size: 22px;
+    font-weight: 600;
+    color: #001a66;
 }
 
 .auth-container .auth-header p {
-  font-size: 14px;
-  color: #555;
-  margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
 }
 
 /* Form */
 .auth-container .auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .auth-container .form-group label {
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 6px;
-  display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 6px;
+    display: block;
 }
 
 .auth-container .form-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 14px;
-  outline: none;
-  transition: 0.3s;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
 }
 
 .auth-container .form-group input:focus {
-  border-color: #0056d2;
-  box-shadow: 0 0 4px rgba(0,86,210,0.3);
+    border-color: #0056d2;
+    box-shadow: 0 0 4px rgba(0,86,210,0.3);
 }
 
 /* Options */
 .auth-container .form-options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
 }
 
 .auth-container .checkbox-label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .auth-container .checkbox-label input {
-  margin-right: 6px;
+    margin-right: 6px;
 }
 
 .auth-container .forgot-link {
-  color: #0056d2;
-  text-decoration: none;
-  transition: 0.3s;
+    color: #0056d2;
+    text-decoration: none;
+    transition: 0.3s;
 }
 .auth-container .forgot-link:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Nút login */
 .auth-container .auth-btn {
-  padding: 12px;
-  background: #001a66;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s;
+    padding: 12px;
+    background: #001a66;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .auth-container .auth-btn:hover {
-  background: #0033aa;
+    background: #0033aa;
 }
 
 /* Footer nhỏ trong login */
 .auth-container .auth-footer {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 13px;
-  color: #444;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #444;
 }
 
 .auth-container .auth-footer a {
-  color: #0056d2;
-  text-decoration: none;
+    color: #0056d2;
+    text-decoration: none;
 }
 
 .auth-container .auth-footer a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* CSS bổ sung cho layout toàn trang */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+footer {
+    width: 100%;
+    background-color: #f8f9fa; /* Có thể thay đổi theo style của footer.jsp */
 }

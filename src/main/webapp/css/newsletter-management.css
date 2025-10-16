@@ -1,0 +1,231 @@
+/* 🌈 NEWSLETTER MANAGEMENT - Modern Admin UI */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    --main: #1e3a8a;
+    --light: #f8fafc;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --green: #22c55e;
+    --red: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--text);
+}
+
+.nl-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.nl-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.nl-header h1 {
+    color: var(--main);
+    font-size: 1.8rem;
+}
+
+.nl-header p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* Form */
+.nl-form {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.nl-form h2 {
+    font-size: 1.2rem;
+    color: var(--main);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 15px;
+}
+
+.nl-group label {
+    font-size: 0.9rem;
+    color: #475569;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.nl-group input,
+.nl-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: #fff;
+    transition: 0.2s;
+}
+
+.nl-group input:focus,
+.nl-group select:focus {
+    border-color: var(--main);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+/* Buttons */
+.nl-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px 0;
+    border: 1px solid transparent; /* Thêm viền để đồng bộ */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.2s;
+}
+
+.btn.add { background: var(--green); }
+.btn.add:hover { background: #16a34a; }
+
+.btn.update { background: var(--main); }
+.btn.update:hover { background: #1d4ed8; }
+
+.btn.clear { background: #64748b; }
+.btn.clear:hover { background: #475569; }
+
+/* Table */
+.nl-table h2 {
+    font-size: 1.2rem;
+    color: var(--main);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    font-size: 0.9rem;
+}
+
+th,
+td {
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: var(--main);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+tr:hover {
+    background: #eef2ff;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.badge.inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Action buttons */
+.tbl-action {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.tbl-btn {
+    border: 1px solid transparent; /* Thêm viền để đồng bộ */
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Đảm bảo kích thước chữ đồng nhất */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.tbl-btn.edit {
+    background: #facc15;
+    color: #78350f;
+}
+
+.tbl-btn.edit:hover {
+    background: #eab308;
+}
+
+.tbl-btn.delete {
+    background: var(--red);
+    color: #fff;
+}
+
+.tbl-btn.delete:hover {
+    background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nl-grid {
+        grid-template-columns: 1fr;
+    }
+    .btn {
+        font-size: 0.85rem;
+    }
+}
