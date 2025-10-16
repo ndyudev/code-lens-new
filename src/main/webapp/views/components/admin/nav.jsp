@@ -3,12 +3,11 @@
   <div class="admin-container">
     <ul>
       <li><a href="${pageContext.request.contextPath}/AdminServlet?page=dashboard">Dashboard</a></li>
-      <li><a href="${pageContext.request.contextPath}/AdminServlet?page=news">Tin tức</a></li>
-      <li><a href="${pageContext.request.contextPath}/AdminServlet?page=categories">Danh mục</a></li>
-      <li><a href="${pageContext.request.contextPath}/AdminServlet?page=users">Người dùng</a></li>
-      <li><a href="${pageContext.request.contextPath}/AdminServlet?page=reports">Báo cáo</a></li>
-      <li><a href="${pageContext.request.contextPath}/AdminServlet?page=account">Quản lý tài khoản</a></li>
-      <li><a href="${pageContext.request.contextPath}/AdminServlet?page=newsletter">Newsletter</a></li>
+      <li><a href="${pageContext.request.contextPath}/AdminServlet?page=post">Đăng bài</a></li>
+      <li><a href="${pageContext.request.contextPath}/AdminServlet?page=category-management">Danh mục</a></li>
+      <li><a href="${pageContext.request.contextPath}/AdminServlet?page=user-management">Người dùng</a></li>
+      <li><a href="${pageContext.request.contextPath}/AdminServlet?page=newsletter-management">Newsletter</a></li>
+      <li><a href="${pageContext.request.contextPath}/AdminServlet?page=newsletter">Đăng xuất</a></li>
     </ul>
   </div>
   </nav>
