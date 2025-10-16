@@ -6,6 +6,7 @@
 <script src="https://kit.fontawesome.com/f4e3fc99b3.js" crossorigin="anonymous"></script>
 <!-- CSS -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mainUser.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/asideUser.css">
 <link rel="icon" href="${pageContext.request.contextPath}/images/codelensnew-logo.svg">
 <meta charset="UTF-8">
 <title>Code Lens New</title>

@@ -1,0 +1,291 @@
+/* 🌈 POST MANAGEMENT - Modern Admin UI */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    --main: #1e3a8a;
+    --light: #f8fafc;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --green: #22c55e;
+    --red: #ef4444;
+    --accent: #facc15; /* Màu accent */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--text);
+}
+
+.pm-wrapper {
+    max-width: 950px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border);
+}
+
+/* Header */
+.pm-header {
+    text-align: center;
+    margin-bottom: 35px;
+    padding: 15px;
+    background: var(--main);
+    border-radius: 12px;
+}
+
+.pm-header h1 {
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pm-header p {
+    color: #e0e7ff;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* Form Section */
+.pm-form-section {
+    background: #f9fafb;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 35px;
+    border: 1px solid var(--border);
+}
+
+.pm-form-section h2 {
+    font-size: 1.3rem;
+    color: var(--main);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.pm-group label {
+    font-size: 0.95rem;
+    color: #475569;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.pm-group input,
+.pm-group select,
+.pm-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    background: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.pm-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.pm-group input:focus,
+.pm-group select:focus,
+.pm-group textarea:focus {
+    border-color: var(--main);
+    box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.15);
+}
+
+.pm-group input[type="file"] {
+    padding: 10px 0;
+    border: none; /* Xóa border cho input hình ảnh */
+    background: transparent;
+}
+
+.pm-group.pm-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pm-group.pm-check input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.pm-group.pm-check input[type="checkbox"]:checked {
+    background-color: var(--green);
+    border-color: var(--green);
+}
+
+.pm-group.pm-check input[type="checkbox"]:checked::after {
+    content: "✓";
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Buttons */
+.pm-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 0;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.btn.add { background: var(--green); }
+.btn.add:hover { background: #16a34a; }
+
+.btn.update { background: var(--main); }
+.btn.update:hover { background: #1d4ed8; }
+
+.btn.clear { background: #64748b; }
+.btn.clear:hover { background: #475569; }
+
+/* Table Section */
+.pm-table-section {
+    margin-top: 35px;
+}
+
+.pm-table-section h2 {
+    font-size: 1.3rem;
+    color: var(--main);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pm-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    font-size: 0.95rem;
+}
+
+.pm-table th,
+.pm-table td {
+    padding: 14px 18px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.pm-table th {
+    background: var(--main); /* Xóa gradient, dùng màu đơn */
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.pm-table tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.pm-table tr:hover {
+    background: #eef2ff;
+}
+
+/* Action Buttons */
+.tbl-action {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 0; /* Loại bỏ padding để viền không bị lệch */
+    margin: 0 -2px; /* Điều chỉnh margin để căn chỉnh viền */
+}
+
+.tbl-btn {
+    border: 1px solid transparent; /* Đồng bộ viền */
+    padding: 15px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    margin: 0 2px; /* Thêm margin để cách đều và tránh lệch */
+}
+
+.tbl-btn.edit {
+    background: var(--accent);
+    color: #78350f;
+}
+
+.tbl-btn.edit:hover {
+    background: #e6b800;
+}
+
+.tbl-btn.delete {
+    background: var(--red);
+    color: #fff;
+}
+
+.tbl-btn.delete:hover {
+    background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pm-grid {
+        grid-template-columns: 1fr;
+    }
+    .pm-wrapper {
+        padding: 20px;
+    }
+    .pm-table th,
+    .pm-table td {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    .btn {
+        font-size: 0.9rem;
+    }
+}

@@ -1,17 +1,29 @@
 /* Import tất cả file con */
 @import url("headerUser.css");
 @import url("footerUser.css");
-@import url("asideUser.css");
 @import url("contentUser.css");
 @import url("changepassword.css");
 @import url("login.css");
 
 
+
+/* 🧩 MAIN CONTENT LAYOUT - 2 CỘT */
 .main-content {
-	display: flex;
-	justify-content: space-between;
-	max-width: 1200px;
-	margin: 0 auto;
-	gap: 20px;
-	flex-wrap: wrap;
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Cột chính */
+.main-content .content {
+  flex: 3;
+}
+
+/* Aside */
+.main-content .aside-user {
+  flex: 1;
 }

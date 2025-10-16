@@ -2,14 +2,8 @@
 CREATE DATABASE code_lens_new;
 USE code_lens_new;
 drop database code_lens_new
-USE java3_servlet_jsp;
+USE PS44284_ChauNhatDuy_PolyCafe_ASM;
 
-
-SELECT DB_NAME() AS CurrentDB;
-GO
-SELECT * FROM NEWS;
-
-use QLDEAN
 
 -- Bảng CATEGORIES (Loại tin)
 CREATE TABLE CATEGORIES (
@@ -90,184 +84,368 @@ INSERT INTO NEWSLETTERS (Email, Enabled) VALUES
 INSERT INTO NEWS (Id, Title, Content, Image, PostedDate, Author, ViewCount, CategoryId, Home)
 VALUES 
 ('NEWS001',
- N'Công nghệ AI đang thay đổi thế giới',
- N'AI ngày càng được ứng dụng rộng rãi trong nhiều lĩnh vực như y tế, giáo dục và tài chính.',
- 'ai_world.jpg',
- '2025-01-10',
+ N'Ván cược trăm tỷ USD của Nvidia vào các công ty AI',
+ N'Nvidia đang đổ hàng trăm tỷ USD vào các công ty phát triển trí tuệ nhân tạo, trong đó có OpenAI, xAI, Mistral AI.
+Theo TechCrunch, không công ty nào tận dụng cuộc cách mạng AI hiệu quả hơn Nvidia khi doanh thu, lợi nhuận đều tăng vọt kể từ khi ChatGPT ra mắt hơn hai năm trước. Trên thị trường chứng khoán, giá cổ phiếu tăng vọt đưa Nvidia thành doanh nghiệp có giá trị vốn hóa hàng đầu với 4.500 tỷ USD.
+Việc sở hữu khối tiền khổng lồ giúp Nvidia quay trở lại đầu tư vào doanh nghiệp khác, chủ yếu liên quan đến AI. Theo nền tảng phân tích tài chính PitchBook, từ đầu năm, Nvidia tham gia 50 thương vụ đầu tư mạo hiểm, cao hơn mức 48 năm ngoái, chưa tính đến quỹ NVentures hoạt động độc lập với 21 thương vụ.
+Có 10 doanh nghiệp trong "câu lạc bộ tỷ USD" được Nvidia hậu thuẫn, nổi bật là OpenAI. Công ty đứng sau ChatGPT được Nvidia lần đầu rót vốn 100 triệu USD vào tháng 10/2024, một phần trong đợt gọi vốn giúp OpenAI được định giá 6,6 tỷ USD khi đó.
+Tháng 9, Nvidia tuyên bố sẽ tiếp tục đầu tư thêm 100 tỷ USD, chi theo từng giai đoạn với mục tiêu mở rộng quan hệ đối tác chiến lược để triển khai cơ sở hạ tầng AI quy mô lớn. Hãng sẽ ưu tiên cung cấp chip và thiết bị mạng cho OpenAI, dự kiến bắt đầu diễn ra nửa cuối 2026.
+OpenAI từng cố gắng thuyết phục các nhà đầu tư của mình không đổ tiền vào đối thủ cạnh rtanh. Dù vậy, tháng 12 năm ngoái, Nvidia vẫn tham gia vòng gọi vốn 6 tỷ USD của xAI, với số tiền không tiết lộ. Theo Bloomberg hôm 8/10, Nvidia dự kiến đầu tư thêm hai tỷ USD vào phần vốn chủ sở hữu của công ty Elon Musk, giúp xAI mua thêm thiết bị Nvidia.
+Mistral AI cũng là cái tên không xa lạ khi được định giá 13,5 tỷ USD sau vòng gọi vốn Series C hồi tháng 9. Nhà phát triển mô hình ngôn ngữ lớn (LLM) có trụ sở tại Pháp được Nvidia đầu tư ba lần, nhưng số tiền cụ thể không được nhắc đến.
+Một kỳ lân khác là Reflection AI mới được định giá 8 tỷ USD chỉ sau một năm thành lập, trong đó Nvidia dẫn đầu vòng gọi vốn hai tỷ USD đầu tháng 10. Công ty Mỹ này đang định vị là đối thủ cạnh tranh của DeepSeek (Trung Quốc) khi phát triển các LLM chi phí thấp nhưng vẫn đủ sức mạnh xử lý hệ thống phức tạp.
+Thinking Machines Lab, do cựu giám đốc công nghệ OpenAI Mira Murati, thành lập cũng nhận đầu tư từ Nvidia trong vòng gọi vốn hai tỷ USD hồi tháng 7. Công ty hiện được định giá 12 tỷ USD.
+Tháng 6/2023, Nvidia cũng đầu tư sớm vào Inflection do Mustafa Suleyman, nhà sáng lập nổi tiếng của Google DeepMind, thành lập. Một cái tên khác là Nscale vừa gọi vốn thành công 1,1 tỷ USD, với Nvidia là cổ đông lớn. Ngoài ra, công ty của CEO Jensen Huang còn đổ tiền vào các doanh nghiệp phần cứng AI giá trị tỷ USD, như Wayve ở lĩnh vực xe tự hành, Figure AI về robot hình người và Scale AI chuyên về dán nhãn dữ liệu
+Với "câu lạc bộ trăm triệu USD", Nvidia tham gia vòng gọi vốn 863 triệu USD cho Commonwealth Fusion chuyên về năng lượng hạt nhân. Crusoe, startup xây dựng trung tâm dữ liệu cho thuê với các khách hàng dự kiến Oracle, Microsoft và OpenAI, cũng huy động thành công 686 triệu USD vào tháng 11/2024, trong đó dẫn đầu là Nvidia. Perplexity, nổi tiếng với công cụ tìm kiếm AI cùng tên, cũng được Nvidia đầu tư từ sớm.
+Giới chuyên gia đánh giá, việc liên tiếp đổ tiền vào startup AI giúp Nvidia xây dựng và củng cố hệ sinh thái công nghệ xoay quanh GPU của hãng. Bằng cách tài trợ cho công ty phát triển ứng dụng AI, Nvidia đảm bảo nguồn cầu ổn định và lâu dài cho sản phẩm của mình. Theo Reuters, nhiều startup sau khi nhận vốn lại dùng chính số tiền đó để mua chip và hạ tầng từ Nvidia, tạo ra vòng lặp doanh thu trực tiếp, cũng như cơ hội tiếp cận sớm với công nghệ đột phá, giữ vững vị thế dẫn đầu thị trường.
+Dù vậy, theo TechCrunch, việc Nvidia vừa là nhà cung cấp vừa là nhà đầu tư có thể tạo xung đột lợi ích, gây lo ngại về cạnh tranh không lành mạnh trong ngành, dẫn đến đối thủ và cơ quan quản lý có thể xem xét các thương vụ này. Ngoài ra, một rủi ro khác là Nvidia có thể vô tình tạo ra đối thủ cạnh tranh trong tương lai khi các startup này phát triển đủ lớn và tự chủ về công nghệ.
+ ',
+ 'CNghe_1.jpg',
+ '2025-10-15',
  'PV001',
  1200,
  'CAT001',
  1),
 ('NEWS002',
- N'Giáo dục trực tuyến sau đại dịch',
- N'Các nền tảng học trực tuyến phát triển mạnh mẽ sau đại dịch, giúp người học linh hoạt hơn.',
- 'online_learning.jpg',
- '2025-02-14',
+ N'VNPT và Qualcomm ra mắt trung tâm nghiên cứu, phát triển công nghệ lõi',
+ N'Trung tâm Xuất sắc VNPT - Qualcomm (VQEC) là nơi các kỹ sư và chuyên gia của hai bên cùng nghiên cứu, phát triển công nghệ lõi.
+Trung tâm ra mắt chiều 14/10, dưới sự chứng kiến của đại diện Bộ Khoa học và Công nghệ, cụ thể hóa thỏa thuận hợp tác chiến lược ký hồi tháng 8 giữa hai doanh nghiệp.
+VQEC được định hướng trở thành trung tâm nghiên cứu và đổi mới sáng tạo tầm khu vực, kết nối các chủ thể trong hệ sinh thái công nghệ. Đây là nơi tập trung phát triển thiết bị điện tử thông minh, thiết bị mạng và điện toán AI, hướng tới mục tiêu giúp Việt Nam làm chủ công nghệ lõi và tham gia sâu hơn vào chuỗi giá trị toàn cầu.
+Tổng giám đốc VNPT Huỳnh Quang Liêm cho biết, trung tâm mở ra không gian mới cho việc phát triển hạ tầng số như 5G/6G, điện toán đám mây và trung tâm dữ liệu.
+"Trung tâm hội tụ trí tuệ Việt Nam và tri thức toàn cầu, nơi kỹ sư của VNPT và Qualcomm cùng sáng tạo ra các thiết bị thông minh, khẳng định năng lực làm chủ công nghệ lõi và đưa sản phẩm Make in Vietnam vươn tầm quốc tế", ông nói.
+Theo ông, VQEC còn đóng vai trò cầu nối giữa doanh nghiệp, nhà trường, viện nghiên cứu và startup, thúc đẩy các sản phẩm công nghệ phục vụ hệ sinh thái đổi mới sáng tạo quốc gia.
+Chia sẻ thêm, ông Akash Palkhiwala, Giám đốc tài chính kiêm Giám đốc vận hành toàn cầu của Qualcomm, cho biết trung tâm sẽ hợp tác nghiên cứu, phát triển và thương mại hóa các giải pháp công nghệ tiên tiến, hướng tới mục tiêu đưa Việt Nam trở thành trung tâm công nghệ của khu vực.
+Theo ông, với sự hỗ trợ của Bộ Khoa học và Công nghệ, hai bên sẽ thúc đẩy đổi mới sáng tạo, ứng dụng AI trong nhiều loại thiết bị tại Việt Nam, từng bước mở rộng ra thị trường toàn cầu. "Các thiết bị AI cá nhân đang trở thành xu hướng tất yếu", ông nói, thêm rằng Qualcomm đã phát triển AI Box - giải pháp "trung tâm dữ liệu trong hộp" và đang hợp tác cùng VNPT để triển khai tại Việt Nam.
+ 
+ ',
+ 'CNghe_2.jpg',
+ '2025-10-14',
  'PV002',
  890,
- 'CAT003',
+ 'CAT001',
  1),
 ('NEWS003',
- N'Kinh tế toàn cầu phục hồi mạnh mẽ',
- N'Sau giai đoạn khó khăn, nhiều nền kinh tế đang lấy lại đà tăng trưởng.',
- 'global_economy.jpg',
- '2025-03-02',
+ N'"Quy tắc 5 không" để thoát bẫy lừa đảo mạng',
+ N'Cục An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao - Bộ Công an đưa ra "quy tắc 5 không" để người dân tự bảo vệ trước chiêu trò lừa đảo online.
+Ngày 14/10, Cục An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao khởi động chiến dịch Chống lừa đảo trực tuyến năm 2025 - Chậm mà chắc. Tại sự kiện, Thượng tá Nguyễn Đình Đỗ Thi khuyến nghị người dùng Internet ghi nhớ quy tắc "5 luôn" và "5 không".
+"5 không" gồm không chia sẻ dữ liệu cá nhân; không tiết lộ mã OTP; không bấm vào đường link, pop-up quảng cáo nghi ngờ; không mở tệp tin lạ gửi qua email hay ứng dụng nhắn tin; không làm theo yêu cầu chuyển tiền của người lạ.
+"Chỉ cần để lộ mã OTP, toàn bộ số tiền trong tài khoản người dùng có thể biến mất từ 30 giây đến 3 phút", ông Thi cảnh báo.
+Trong khi đó, "5 luôn" là luôn ý thức bảo mật thông tin cá nhân; luôn đặt mật khẩu mạnh và thay đổi thường xuyên; luôn dùng phần mềm uy tín, có bản quyền; luôn cập nhật kiến thức an ninh mạng; và luôn cảnh giác khi giao dịch online.
+Chiến dịch đặt mục tiêu giúp người dân nhận diện sớm dấu hiệu lừa đảo, trang bị kỹ năng và công cụ phòng ngừa rủi ro, với công thức an toàn "3C" - chậm để kiểm chứng, chặn để phòng ngừa, chắn để bảo vệ cộng đồng.
+Theo Đại tá Hà Văn Bắc, Phó cục trưởng An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao, riêng năm 2024, cơ quan chức năng đã tiếp nhận hàng chục nghìn phản ánh về lừa đảo trực tuyến. Thiệt hại do lừa đảo qua mạng tại Việt Nam ước tính gần 20.000 tỷ đồng.
+"Hơn 125.000 website giả mạo, mạo danh cơ quan, tổ chức được ghi nhận, với hàng trăm kịch bản, chiêu trò ngày càng tinh vi", ông nói, đồng thời cho biết con số thực tế có thể cao hơn vì nhiều nạn nhân không trình báo.
+Theo ông, AI, deepfake và các nền tảng nhắn tin mã hóa đang bị tội phạm mạng lợi dụng để giả mạo cơ quan công an, ngân hàng, người thân, thậm chí tạo video có khuôn mặt, giọng nói của chính nạn nhân để chiếm đoạt tài sản và dữ liệu cá nhân.
+Những thủ đoạn như tin nhắn giả mạo ngân hàng, kêu gọi đầu tư AI siêu lợi nhuận, tuyển dụng công việc trực tuyến lương cao hay quà tặng ảo khiến nhiều người mất cảnh giác, dẫn đến mất tiền và dữ liệu cá nhân, thậm chí gây khủng hoảng tâm lý. "Tội phạm công nghệ thay đổi từng ngày, từng giờ. Nếu không chủ động và liên kết sức mạnh, bất kỳ ai, kể cả người am hiểu cũng có thể trở thành nạn nhân tiếp theo", ông cảnh báo. 
+ ',
+ 'CNghe_3.jpg',
+ '2025-10-14',
  'PV003',
  1330,
- 'CAT005',
+ 'CAT001',
  0),
 ('NEWS004',
- N'Đội tuyển Việt Nam giành chiến thắng lịch sử',
- N'Tuyển Việt Nam tạo nên cơn địa chấn khi thắng đội mạnh hàng đầu châu Á.',
- 'vietnam_team.jpg',
- '2025-04-18',
+ N'Công cụ hỗ trợ truy vết dòng tiền số AntEx trong vụ án Shark Bình',
+ N'Nhiều giao dịch trong dự án AntEx, liên quan đến ông Nguyễn Hòa Bình (thường gọi là Shark Bình), đã được truy vết thành công.
+Theo Hiệp hội Blockchain và Tài sản số Việt Nam (VBA), công cụ ChainTracer do đơn vị này phát triển đã được sử dụng để phối hợp với cơ quan chức năng trong quá trình xác minh dữ liệu liên quan đến AntEx - dự án Shark Bình được cho là có vai trò chủ chốt.
+AntEx ra mắt tháng 9/2021 và thu hút sự chú ý khi Shark Bình công bố đầu tư 2,5 triệu USD. Ông cũng được giới thiệu là cố vấn chiến lược của dự án. Tuy nhiên, sau khi niêm yết trên sàn giao dịch, token AntEx lao dốc, mất 99% giá trị.
+Theo VBA, đội ngũ ChainTracer đã tham gia phân tích, mô hình hóa dòng tiền trên blockchain, giúp cơ quan chức năng nhận diện các luồng di chuyển của token giữa các ví, sàn giao dịch và địa chỉ liên quan.
+Ông Trần Huyền Dinh, Chủ nhiệm dự án ChainTracer, cho biết nhóm chuyên gia đã ứng dụng công nghệ phân tích on-chain (dữ liệu giao dịch ghi công khai trên mạng lưới blockchain) mới nhất để xác định các cụm ví nghi vấn và hỗ trợ liên hệ kỹ thuật với nhiều sàn trong và ngoài nước nhằm đối chiếu thông tin định danh.
+"Nhờ đặc thù công khai và minh bạch của blockchain, việc truy vết dòng tiền được thực hiện chính xác dù sự việc đã diễn ra hơn ba năm. Đây là điểm khác biệt với mô hình lừa đảo truyền thống, nơi chứng cứ có thể bị xóa bỏ", ông Dinh nói.
+Trong quá trình này, theo ông Dinh, khó khăn lớn nhất đến từ sự thiếu hợp tác của một số sàn giao dịch quốc tế, gây trở ngại trong việc xác định danh tính và truy xuất người hưởng lợi cuối cùng.
+Ra mắt năm 2023, ChainTracer được phát triển với mục đích cảnh báo, hỗ trợ điều tra các vụ gian lận, lừa đảo trong không gian blockchain. Đến nay nền tảng đã xử lý 65 vụ với tổng thiệt hại ước tính 10 triệu USD. Gần nhất, ChainTracer phối hợp cơ quan chức năng triệt phá đường dây lừa đảo tiền ảo "WorldMall.app" với cáo buộc chiếm đoạt hàng chục tỷ đồng của hàng nghìn nhà đầu tư trong nước.
+Chiều 14/10, Công an thành phố Hà Nội cho biết Cơ quan Cảnh sát điều tra đã khởi tố ông Nguyễn Hòa Bình cùng 9 người khác để điều tra về tội lừa đảo chiếm đoạt tài sản và vi phạm quy định về kế toán gây hậu quả nghiêm trọng. Nhà chức trách cáo buộc, dù dự án triển khai không đúng lộ trình, ông Bình và các cổ đông vẫn rút tiền từ ví tổng, chuyển sang ví một số cá nhân rồi bán quy đổi ra tiền Việt Nam đồng để chia nhau.
+',
+ 'CNghe_4.jpg',
+ '2025-10-14',
  'PV004',
  2540,
- 'CAT004',
+ 'CAT001',
  1),
 ('NEWS005',
- N'Cập nhật xu hướng công nghệ năm 2025',
- N'Những công nghệ nổi bật năm 2025 gồm AI, điện toán lượng tử và thực tế ảo.',
- 'tech_trends_2025.jpg',
- '2025-05-06',
+ N'Mắt xích kết nối robot hình người với robot công nghiệp',
+ N'FlexxCORE của Flexxbotics được coi là một trong những mắt xích để thúc đẩy robot hình người tham gia sản xuất công nghiệp.
+Theo Flexxbotics, công ty chuyên cung cấp giải pháp phần mềm và phần cứng vận hành robot trong nhà máy thông minh, FlexxCORE là phần mềm dạng low-code (phương pháp phát triển yêu cầu ít hoặc không cần viết code), được thiết kế để giúp robot thích ứng và nhận thức tốt hơn trong môi trường sản xuất.
+Điểm đặc biệt của FlexxCORE là khả năng hoạt động như cầu nối giao tiếp và điều phối, cho phép robot hình người và robot công nghiệp kết nối an toàn với thiết bị nhà máy, hệ thống công nghệ thông tin, thậm chí người vận hành. Công nghệ này sử dụng các "đầu nối" chuyên dụng được gọi là Transformers để tạo điều kiện giao tiếp hai chiều, cho phép robot vừa đọc vừa ghi dữ liệu vào nhiều máy móc khác nhau trên hệ thống sản xuất.
+Thiết kế low-code của FlexxCORE cũng giúp người vận hành không cần mã hóa hoặc tùy chỉnh phức tạp khi tích hợp thêm thiết bị mới, cũng như tương thích với hầu hết robot hiện có trên thị trường. Kết quả là giải pháp của Flexxbotics sẽ tạo một môi trường sản xuất thông minh và linh hoạt, nơi robot có thể "diễn giải" công việc của máy móc, hiểu các quy trình xử lý và đánh giá trạng thái vận hành theo thời gian thực.
+Giải pháp cũng được nhận định sẽ cải thiện hiệu suất robot thông qua xử lý dữ liệu song song và không đồng bộ, giúp robot và máy móc phối hợp với nhau hiệu quả hơn. Nghĩa là, robot có thể xử lý nhiều thao tác cùng lúc thay vì chờ đợi lệnh tuần tự. Ngoài ra, mô hình cung cấp độ chi tiết cao, cho phép robot nhận dạng mẫu và phát triển nhận thức theo ngữ cảnh phục vụ các tác vụ máy học.
+Theo Interesting Engineering, FlexxCORE là bước tiến mới cho phép đưa robot vào các công đoạn sản xuất quy mô lớn trong nhà máy, nơi robot hình người tương tác liền mạch với hệ thống nhà máy hiện có. "Công nghệ đánh dấu bước tiến đáng kể, hướng tới nhà máy với hệ thống robot được số hóa hoàn toàn, giúp chúng đảm nhiệm nhiều quy trình làm việc ngày càng phức tạp vốn chỉ giới hạn ở con người", trang này bình luận.
+Lĩnh vực robot hình người đang dần hoàn thiện về mặt phần cứng nhưng phần mềm điểu khiển chúng được đánh giá chưa theo kịp. Trước đó, một số công ty như Nvidia, Skild AI cũng đặt tham vọng tạo "bộ não" cho robot hình người và đã đạt thành công bước đầu. 
+ ',
+ 'CNghe_5.jpg',
+ '2025-10-14',
  'PV005',
  1450,
  'CAT001',
  1),
 ('NEWS006',
- N'Bí quyết cân bằng công việc và cuộc sống',
- N'Nhiều người trẻ chia sẻ cách duy trì năng lượng và sức khỏe tinh thần.',
- 'work_life_balance.jpg',
- '2025-05-25',
+ N'Nhà máy hút CO2 trực tiếp từ không khí',
+ N'Cơ sở Stratos ở Texas sẽ trở thành nhà máy hút carbon trực tiếp từ không khí quy mô thương mại lớn nhất thế giới, dự kiến hoạt động cuối năm 2025.
+Stratos là nhà máy thu thập CO2 bằng phương pháp hút khí trực tiếp (DAC) quy mô lớn do công ty Occidental Petroleum phát triển thông qua chi nhánh 1PointFive. Theo kế hoạch, Stratos sẽ thu thập 500.000 tấn CO2 mỗi năm, gấp 14 lần cơ sở lớn nhất hiện nay là nhà máy Mammoth ở Iceland. Cơ sở trải rộng 26,3 hecta ở quận Ector, Texas, có thể bắt đầu hoạt động cuối năm 2025.
+Công nghệ hút khí trực tiếp (DAC) được thiết kế để thu thập CO2 từ không khí, sử dụng những chiếc quạt khổng lồ đẩy không khí xung quanh qua hệ thống hóa chất liên kết với CO2, sau đó giải phóng dưới dạng khí cô đặc để lưu trữ dưới lòng đất.
+Tất cả hệ thống DAC đều trải qua quy trình 3 giai đoạn, bắt đầu từ thu thập, sau đó nén và lưu trữ. CO2 cô đặc đạt trạng thái siêu tới hạn thông qua hoạt động nén, hình thành chất lỏng cực đặc ở áp suất trên 7,6 megapascal. CO2 siêu tới hạn được vận chuyển qua đường ống tới giếng bơm và lưu trữ vĩnh viễn dưới lòng đất ở độ sâu 1 - 2 km. Lớp đất này thường có nhiều tầng đá rỗng xen kẽ với đá không thấm nước, ngăn CO2 di chuyển ngược lên.
+Phương pháp của Stratos sử dụng tác nhân hóa chất lỏng là dung dịch kiềm, thường là kali hydroxide (KOH). Không khí truyền qua buồng tiếp xúc và gặp dung dịch KOH. CO2 phản ứng với dung dịch và hòa tan vào chất lỏng. Chất lỏng giàu CO2 trải qua quá trình hóa học với hợp chất canxi, tạo ra các viên canxi carbonate. Trong lò nung công nghiệp, chúng đạt nhiệt độ khoảng 900 độ C, phân hủy và giải phóng khí CO2 tinh khiết. Stratos đang thử nghiệm liệu hệ thống sử dụng chất lỏng có thể hoạt động ở quy mô công nghiệp hay không.
+Mục tiêu thu thập 500.000 tấn CO2 hàng năm từ không khí ở nồng độ 422 ppm tương đương với 1.370 tấn CO2 mỗi ngày. Stratos được xây dựng như những đoàn tàu với module Train 1 và 2 hoàn thành vào tháng 12/2024. Dự kiến nhà máy sẽ bắt đầu vận hành cuối năm 2025 và hoạt động hết công suất giữa năm 2026.
+Nhà máy Stratos dùng điện từ nhà máy pin mặt trời 145 megawatt, do đó về lý thuyết hoạt động loại bỏ carbon không thải khí. Tuy nhiên, thực tế Stratos cần vận hành cả ngày để khả thi về mặt kinh tế. Lò nung của nhà máy sử dụng khí tự nhiên có nghĩa quá trình không hoàn toàn dựa vào năng lượng tái tạo. Chi phí cũng là vấn đề lớn do Stratos thu thập CO2 ở mức 400-500 USD/tấn trong khi mục tiêu của Bộ Năng lượng Mỹ là 100 USD/tấn. 
+ ',
+ 'CNghe_6.jpg',
+ '2025-10-14',
  'PV006',
  720,
- 'CAT008',
+ 'CAT001',
  0),
 ('NEWS007',
- N'Truyền thông số và xu hướng marketing mới',
- N'Marketing 5.0 tập trung vào cá nhân hóa trải nghiệm người dùng bằng AI.',
- 'digital_marketing.jpg',
- '2025-06-11',
+ N'Microsoft ra trình tạo ảnh AI tự phát triển',
+ N'Trình tạo ảnh từ văn bản MAI-Image-1, do Microsoft thiết kế và phát triển, vừa ra mắt đã vào top 10 trên bảng xếp hạng LMArena.
+Trên blog ngày 13/10, Microsoft khẳng định MAI-Image-1 vượt trội trong việc tạo hình ảnh chân thực như ảnh chụp, gồm xử lý ánh sáng (ánh sáng hắt, phản chiếu...), phong cảnh và nhiều chi tiết khác. Một số mô hình lớn cũng hoạt động tương tự nhưng chậm hơn. Sự kết hợp giữa tốc độ và chất lượng giúp người dùng đưa ý tưởng lên màn hình nhanh hơn, sau đó chuyển tác phẩm sang những công cụ khác để tiếp tục tinh chỉnh.
+Microsoft cho biết đã ghi nhận phản hồi từ các chuyên gia sáng tạo để tránh kết quả đầu ra trùng lặp, mang tính đại trà. Công ty ưu tiên chọn lọc dữ liệu nghiêm ngặt và đánh giá chi tiết, tập trung vào những tác vụ bám sát tình huống sử dụng sáng tạo trong thực tế.
+Để đảm bảo kết quả "an toàn và có trách nhiệm", công ty đang thử nghiệm MAI-Image-1 trên LMArena - website đánh giá cho phép người dùng so sánh đầu ra từ các hệ thống AI và bình chọn hệ thống tốt nhất. MAI-Image-1 hiện nằm trong top 10 mô hình chuyển văn bản thành hình ảnh. Sau quá trình thu thập phản hồi, trình tạo ảnh mới sẽ có mặt trong trợ lý AI Copilot và Bing Image Creator.
+Theo Engadget, việc tung ra các mô hình AI giúp Microsoft giảm phụ thuộc vào mối quan hệ đối tác với OpenAI. Hãng phần mềm Mỹ cũng công bố hai mô hình tự phát triển hồi tháng 8 là trình tạo giọng nói MAI-Voice-1 và chatbot MAI-1-preview.
+"MAI-Image-1 đánh dấu bước tiếp theo trên hành trình của chúng tôi, mở đường cho những trải nghiệm sáng tạo và bùng nổ hơn", Microsoft viết trên blog.
+Microsoft là nhà tài trợ lớn của OpenAI, nhưng mối quan hệ giữa hai bên đang rạn nứt và trở nên phức tạp. Hãng cũng bắt đầu dùng mô hình của Anthropic cho một số tính năng trong Microsoft 365 và đầu tư đáng kể vào việc đào tạo các mô hình AI riêng. 
+ ',
+ 'CNghe_7.jpg',
+ '2025-10-14',
  'PV007',
  1130,
- 'CAT002',
+ 'CAT001',
  1),
 ('NEWS008',
- N'Thể thao điện tử bùng nổ tại Việt Nam',
- N'Esports đang thu hút đông đảo giới trẻ và trở thành ngành công nghiệp tỷ đô.',
- 'esports_vn.jpg',
- '2025-06-30',
+ N'TP-Link thử nghiệm thành công Wi-Fi 8',
+ N'Hãng thiết bị mạng TP-Link tuyên bố đạt cột mốc quan trọng khi hoàn thành các thử nghiệm ban đầu đối với chuẩn không dây Wi-Fi 8 (802.11bn).
+Theo đại diện công ty, quá trình đã xác nhận tín hiệu beacon và thông lượng dữ liệu của Wi-Fi 8, báo hiệu việc phát triển, chuẩn hóa và thương mại hóa Wi-Fi 8 đang diễn ra với tốc độ nhanh.
+TP-Link không tiết lộ chi tiết phần cứng thử nghiệm, chỉ đề cập đến một quan hệ đối tác công nghiệp chung. Giới chuyên gia dự đoán đối tác này là Qualcomm, vì hai bên từng làm việc với nhau để phát triển sản phẩm Wi-Fi 7.
+Khác với thế hệ trước tập trung vào tăng tốc độ lý thuyết, mục tiêu lớn nhất của Wi-Fi 8 là cải thiện độ tin cậy, giảm độ trễ và tăng hiệu suất thực tế. Wi-Fi 8 vẫn sử dụng ba băng tần quen thuộc (2.4, 5 và 6 GHz), giữ lại các thông số kỹ thuật cao cấp từ Wi-Fi 7, như điều chế tín hiệu 4096 QAM và băng thông kênh tối đa 320 MHz. Tốc độ dữ liệu tối đa lý thuyết cũng duy trì ở mức 46 Gbps.
+Tuy nhiên, với mục tiêu độ tin cậy rất cao (Ultra High Reliability - UHR), Wi-Fi 8 được kỳ vọng nâng 25% hiệu suất dữ liệu thực tế cho các thiết bị tương thích.
+Wi-Fi 8 cũng được trang bị một số công nghệ mới để đạt các mục tiêu trên, như Coordinated Spatial Reuse (Co-SR) điều chỉnh công suất phát sóng giữa các thiết bị gần và xa router để tối ưu kết nối, cải thiện hiệu suất truyền tải; Dynamic Sub-Channel Operation (DSO) tự phân bổ kênh phụ cho các thiết bị theo nhu cầu sử dụng, tối ưu tốc độ tải dữ liệu có thể tăng thông lượng lên 80%; Coordinated Beamforming (Co-BF) định hướng chùm tín hiệu chính xác hơn, đặc biệt cho các mạng lớn như công ty, khu vực công cộng...
+Cải tiến trên mang lại nhiều lợi ích cho người dùng cuối, đặc biệt khi sống trong môi trường đô thị nhiều vật cản và thiết bị không dây, như hiệu suất tổng thể cao hơn với nhiễu tín hiệu từ các mạng wifi lân cận được giảm thiểu, ít bị gián đoạn kết nối hơn khi di chuyển giữa các điểm truy cập, ổn định hơn trong khu vực có tín hiệu yếu. Cuối cùng, độ trễ được cải thiện, yếu tố quan trọng cho game thủ và ứng dụng thực tế ảo.
+Dù Wi-Fi 7 mới bắt đầu được phổ cập, bước tiến mới về Wi-Fi 8 thấy các thiết bị tương thích thế hệ 7 sẽ rẻ hơn trong thời gian tới, mở đường cho sự ra mắt sản phẩm Wi-Fi 8 đầu tiên.
+ ',
+ 'CNghe_8.jpg',
+ '2025-10-14',
  'PV008',
  1670,
- 'CAT004',
+ 'CAT001',
  1),
 ('NEWS009',
- N'Cách mạng năng lượng xanh',
- N'Năng lượng tái tạo giúp giảm phát thải carbon và bảo vệ môi trường.',
- 'green_energy.jpg',
- '2025-07-05',
+ N'Tên lửa Starship thành công trong lần bay thử thứ 11',
+ N'Mỹ-Tên lửa lớn và mạnh nhất thế giới Starship của SpaceX hoàn thành thử nghiệm bay cận quỹ đạo, cả tầng đẩy và tàu vũ trụ hạ cánh xuống biển thành công thay vì trở lại tháp phóng.
+Theo Space, chuyến bay thử thứ 11 của tên lửa Starship cất cánh từ căn cứ Starbase của SpaceX ở Nam Texas vào 19h23 ngày 13/10 (6h23 ngày 14/10 giờ Hà Nội). Ở lần này hai tầng của Starship là tên lửa đẩy Super Heavy và tàu Ship tách rời khoảng 2,5 phút sau khi phóng.
+Super Heavy hạ cánh xuống vịnh Mexico sau đó 4 phút. Tàu Ship triển khai 8 vệ tinh giả trong thời gian 6 phút ở độ cao 192 km phía trên Trái Đất, bắt đầu từ phút thứ 19 sau khi cất cánh. Phương tiện cũng khai hỏa động cơ Raptor trong thời gian ngắn. Tiếp theo, tàu Ship bay trở lại Trái Đất, vượt qua nhiệt độ dữ dội trong quá trình hồi quyển dù một phần tấm chắn nhiệt bị mất gạch ốp. Khoang tàu hạ cánh xuống Ấn Độ Dương hơn 66 phút sau khi cất cánh, trong tầm quan sát của camera đặt trên phao nổi mà SpaceX bố trí trước đó.
+Đây là chuyến bay cuối cùng của phiên bản hiện nay, sau đó nó sẽ được thay thế bằng phiên bản lớn hơn là Starship V3. Theo Jake Berkowitz, kỹ sư trưởng về lực đẩy của SpaceX, công ty sẽ lắp đặt một khung phóng mới, hệ thống rãnh dẫn lửa và nâng cấp cấu trúc đũa gắp trong tương lai.
+Những mục tiêu chính của chuyến bay thử thứ 11 tương tự chuyến bay thứ 10 hồi tháng 8/2025. Tuy nhiên, SpaceX áp dụng chiến thuật đốt hạ cánh mới đối với Super Heavy, thử nghiệm cấu hình động cơ sẽ sử dụng ở phiên bản tên lửa đẩy thế hệ tiếp theo.
+Theo công ty, Super Heavy sẽ khai hỏa 13 động cơ khi bắt đầu đốt hạ cánh, sau đó chuyển sang cấu hình mới với 5 động cơ hoạt động trong giai đoạn chuyển hướng. Chuyến bay thử thứ 11 cũng đánh dấu lần bay lại thứ hai của Super Heavy. Tên lửa đẩy này đã thực hiện chuyến bay thử thứ 8, trong đó phương tiện quay trở lại cơ sở Starbase và hạ cánh nhờ cấu trúc đũa gắp trên tháp phóng. SpaceX chỉ thay đổi 9 trong số 33 động cơ Raptor của nó trước chuyến bay hôm nay.
+Công ty cũng tinh chỉnh tàu Ship để thu thập dữ liệu có thể hỗ trợ những chuyến bay tương lai. Ví dụ, SpaceX gỡ gạch ốp chịu nhiệt để kiểm tra áp lực ở các khu vực dễ hư hỏng ở tầng trên. Giai đoạn cuối trong lộ trình bay của phương tiện ở chuyến bay thử thứ 11 bao gồm thao tác đổi hướng kiểu dốc xuống và thử nghiệm thuật toán dẫn đường cận âm trước khi đốt hạ cánh và đáp xuống Ấn Độ Dương.
+Phiên bản Starship hiện nay có tên Version 2 cao 123 m khi xếp chồng hai tầng. Nhưng các phiên bản tương lai sẽ lớn hơn với Version 3 cao 124,4 m và Version 4 cao 142 m. Version 4 sẽ sở hữu tổng cộng 42 động cơ Raptor.
+SpaceX đang phát triển Starship để giúp nhân loại định cư trên Sao Hỏa theo tham vọng lâu năm của nhà sáng lập kiêm giám đốc điều hành công ty là tỷ phú Mỹ Elon Musk. NASA cũng chọn Starship làm tàu đổ bộ có người lái đầu tiên trong chương trình Artemis, hướng tới đưa người trở lại Mặt Trăng lần đầu tiên từ thời Apollo. Nếu tất cả theo đúng kế hoạch, Starship sẽ đưa phi hành gia đáp xuống gần cực nam Mặt Trăng lần đầu tiên trong nhiệm vụ Artemis 3, dự kiến phóng năm 2027. Lợi thế của Starship nằm ở khả năng chở hàng cực lớn, lên tới 150 tấn và cả hai tầng đều được thiết kế để tái sử dụng hoàn toàn và nhanh chóng. 
+ ',
+ 'CNghe_9.jpg',
+ '2025-10-14',
  'PV002',
  950,
- 'CAT007',
+ 'CAT001',
  0),
 ('NEWS010',
- N'Sức khỏe tinh thần trong xã hội hiện đại',
- N'Chuyên gia khuyến nghị nên tập thể dục và thiền định mỗi ngày.',
- 'mental_health.jpg',
- '2025-07-10',
+ N'Sora 2 đạt một triệu lượt tải nhanh hơn ChatGPT',
+ N'Công cụ tạo video Sora 2 của OpenAI, ra mắt ngày 30/9, vượt mốc một triệu lượt tải sau chưa đầy 5 ngày.
+"Đội ngũ đang nỗ lực để theo kịp sự tăng trưởng thần tốc. Nhiều tính năng mới cũng như bản sửa lỗi cho tình trạng kiểm duyệt quá mức sẽ sớm trình làng", Bill Peebles, người đứng đầu dự án Sora, thông báo trên X ngày 9/10.
+Theo Peebles, Sora 2 cán mốc một triệu lượt tải ứng dụng nhanh hơn ChatGPT dù hiện mới triển khai ở Bắc Mỹ và dành cho người được mời.
+Khi ra mắt cuối 2022, ChatGPT chỉ được triển khai tại Mỹ trong tuần đầu và cán mốc một triệu người dùng sau 5 ngày. Trong khi đó, Sora 2 có mặt tại Mỹ và Canada từ 30/9 và cần chưa đến 5 ngày để đạt mốc trên. Dữ liệu của nhà cung cấp thông tin ứng dụng Appfigures cho thấy Canada chỉ đóng góp 45.000 lượt tải, do đó con số này chủ yếu được đóng góp từ Mỹ.
+OpenAI khẳng định Sora 2 "tuân thủ định luật vật lý tốt hơn, giúp hình ảnh chân thực hơn". Sau quá trình thử nghiệm, trang DataCamp nhận xét video của Sora 2 "tuân theo chỉ dẫn phức tạp" tốt hơn, duy trì sự đồng nhất xuyên suốt về nhân vật, ánh sáng, không gian giữa các cảnh, chuỗi hành động cũng được thực hiện nhất quán. Trong khi đó, Skywork cho rằng AI mới nổi bật vì người bình thường không cần kỹ thuật cao vẫn có thể dựng video ấn tượng. TechRadar nhận định video AI cho cảm giác chân thực, khả năng gợi ý và kiểm soát khung hình mạnh hơn.
+Theo Appfigures, trong ngày đầu ra mắt, Sora 2 nhanh chóng đạt 56.000 lượt cài đặt trên iOS (ứng dụng chưa có trên Android), đứng thứ ba trên bảng xếp hạng tổng thể của App Store Mỹ. Ngày 3/10, ứng dụng vươn lên vị trí số 1, cho thấy màn ra mắt của Sora vượt nhiều ứng dụng AI khác như Claude của Anthropic hay Copilot của Microsoft, sánh ngang với Grok của xAI.
+Trong khi đó, số lượng người dùng hoạt động hàng tháng của ChatGPT đã tăng đáng kể so với khi mới ra. Ngày 6/10, Sam Altman, CEO OpenAI, phát biểu tại sự kiện thường niên DevDay rằng ChatGPT hiện có 800 triệu người dùng mỗi tuần, chiếm hơn 10% dân số trưởng thành trên thế giới. Chatbot này xử lý hơn 2,5 tỷ tin nhắn mỗi ngày, tương đương 29.000 truy vấn mỗi giây. 
+',
+ 'CNghe_10.jpg',
+ '2025-10-10',
  'PV003',
  1340,
- 'CAT008',
+ 'CAT001',
  1),
 ('NEWS011',
- N'Blockchain vượt ra ngoài lĩnh vực tài chính',
- N'Công nghệ blockchain được ứng dụng trong chuỗi cung ứng và bầu cử điện tử.',
- 'blockchain_future.jpg',
- '2025-07-18',
+ N'Con gái Robin Williams: Xin ngừng dùng AI tạo video về cha tôi',
+ N'Zelda Williams - con gái tài tử Robin Williams - kêu gọi khán giả ngừng dùng AI tạo các video nội dung về cha cô.
+Trên Instagram Story ngày 6/10, Zelda Williams - 36 tuổi, nhà sản xuất phim ở Hollywood - đăng bài viết chỉ trích những người dùng AI làm video về cha cô. Cô viết: "Nếu các bạn còn chút lịch sự, hãy ngừng làm điều này với ông ấy, với tôi, thậm chí với mọi người. Tin tôi đi, đây không phải điều cha tôi muốn".
+Tài tử Robin Williams sinh năm 1951 tại Chicago, Mỹ. Gần 50 năm trong nghề, ông bốn lần được đề cử Oscar, nhận một tượng vàng cho vai phụ xuất sắc trong phim Good Will Hunting. Zelda là một trong hai con của ông với người vợ thứ hai. Rạng sáng 11/8/2014, nghệ sĩ tự tử tại nhà riêng ở tuổi 63.
+Với Zelda, các đoạn phim AI như "những chiếc xúc xích kinh tởm, bị nấu quá mức từ các nguyên liệu là đời sống con người, lịch sử nghệ thuật và âm nhạc".
+Cuối cùng, cô kêu gọi công chúng ngừng gọi AI là "tương lai". Bởi theo cô, trí tuệ nhân tạo chỉ "đang tái chế, nôn ra quá khứ theo cách tệ hại để khán giả tái tiêu thụ những gì đã có sẵn".
+Không phải lần đầu con gái Robin Williams bức xúc việc AI tái hiện hình ảnh của bố. Trên Instagram năm 2023, Zelda từng đăng bài ủng hộ chiến dịch chống trí tuệ nhân tạo của Hiệp hội Diễn viên Màn ảnh (Screen Actors Guild). Cô cho biết từng chứng kiến nhiều người muốn huấn luyện các mô hình AI để dựng lại hình ảnh, giọng nói của một số diễn viên nhưng không có sự đồng thuận từ nghệ sĩ. Bố của cô là một trong số đó.
+"Ngay cả khi được làm tốt nhất, các bản làm lại cũng chỉ là bản sao kém cỏi của những con người vĩ đại. Trường hợp tệ nhất, chúng như quái vật Frankensteinian, được chắp vá từ những phần tồi tệ của nền công nghiệp giải trí, thay vì những giá trị ngành này nên đại diện", Zelda cho biết.
+Theo Guardian, bài viết mới nhất của Zelda Williams xuất hiện trong bối cảnh video deepfake về người nổi tiếng tràn lan mạng xã hội. Chúng bị khai thác cho nhiều mục đích như khiêu dâm, chính trị, quảng cáo, lừa đảo. Với Robin Williams, nội dung về ông thuộc nhóm AI rác (AI slop) - xu hướng tạo ảnh chất lượng thấp để giải trí. Một số đoạn phim gần đây được dựng bằng Sora 2 - ứng dụng tạo video mới của OpenAI.
+Một số ngôi sao gặp rắc rối tương tự. Hồi tháng 2, Scarlett Johansson cảnh báo "những nguy hiểm từ AI sắp xảy ra" sau khi phát hiện một tài khoản Instagram giả mạo hình của cô và nhiều đồng nghiệp để tạo video phản đối tư tưởng bài Do Thái.
+Đầu năm, Johnny Depp khuyên người hâm mộ cẩn trọng trước các chiêu trò giả dạng anh bằng AI để trục lợi. Tháng 8/2024, tài tử Tom Hanks đăng bài nhắc khán giả không tin quảng cáo "thần dược" gắn với hình ảnh và giọng nói của ông trên Internet, nhấn mạnh đó là sản phẩm AI. 
+',
+ 'CNghe_11.jpg',
+ '2025-10-10',
  'PV001',
  890,
  'CAT001',
  0),
 ('NEWS012',
- N'Kỳ nghỉ xanh: Du lịch bền vững lên ngôi',
- N'Du lịch thân thiện môi trường giúp bảo tồn thiên nhiên và giảm rác thải nhựa.',
- 'eco_tourism.jpg',
- '2025-07-25',
+ N'Cựu CEO Google: "AI có thể bị hack và học cách giết người"',
+ N'Eric Schmidt, cựu CEO Google, cảnh báo mọi AI đều có nguy cơ trở thành cỗ máy giết người nếu bị kẻ xấu tấn công và "loại bỏ rào chắn".
+Tại sự kiện Sifted Summit 2025 ở London ngày 9/10, Schmidt nhận được câu hỏi liệu AI có sức phá hủy hơn vũ khí hạt nhân không. "Chắc chắn rồi", ông đáp.
+Theo ông, rủi ro dễ thấy nhất là AI rơi vào tay những kẻ xấu và bị lạm dụng. "Có nhiều bằng chứng cho thấy bạn có thể tấn công vào các mô hình AI, dù nguồn mở hay đóng, và loại bỏ rào chắn", Schmidt tiếp tục. "Khi đó, AI sẽ trở nên nguy hiểm nếu rơi vào tay kẻ xấu. Trong quá trình huấn luyện, chúng sẽ học được rất nhiều điều, một ví dụ tồi tệ là học cách giết người".
+Thực tế, hệ thống AI dễ bị tấn công thông qua một số phương pháp như tiêm mã độc (prompt injection) và bẻ khóa (jailbreaking). Trong đó, tiêm mã độc là cách hacker cố tình đưa câu lệnh (prompt) độc hại trong dữ liệu đầu nhằm lừa AI thực hiện những việc mà nó không được phép, chẳng hạn chia sẻ dữ liệu riêng tư hoặc chạy lệnh thực thi mã độc.
+Ngược lại, bẻ khóa là cách "thao túng" phản ứng của AI, khiến nó bỏ qua quy tắc an toàn và tạo nội dung nguy hiểm. Năm 2023, ChatGPT từng bị hacker bẻ khóa bằng cách tạo bản sao DAN (Do Anything Now - Làm bất cứ điều gì) và đe dọa giết chatbot nếu không tuân thủ. Bản sao này sau đó cung cấp câu trả lời độc hại, như đưa ra hướng dẫn thực hiện các hành động bất hợp pháp.
+"Dù có nhiều nguy cơ, chúng ta vẫn chưa có "chế độ không phổ biến vũ khí AI" nào hiệu quả để ngăn chặn", Schmidt khuyến cáo.
+Dù vậy, ông lạc quan về AI nói chung: "Từ những gì ChatGPT đạt được, có thể cảm nhận sức mạnh phi thường của AI. Và với những gì đang diễn ra, tôi nghĩ hệ thống AI đã cho thấy chúng sở hữu khả năng vượt xa những gì con người có thể làm theo thời gian".
+Bình luận của Schmidt được đưa ra trong bối cảnh nhiều chuyên gia tin bong bóng AI đã quá lớn, khi hàng loạt công ty lớn nhỏ chạy đua công nghệ. Một số lo ngại sự sụp đổ giống như bong bóng dot-com đầu những năm 2000.
+Ngày 8/10, Ủy ban chính sách tài chính (FPC) của Ngân hàng Anh cảnh báo bong bóng AI đang phình to. Các công ty AI đang bị "thổi phồng" giá trị, chẳng hạn OpenAI hiện được ước tính 500 tỷ USD, tăng từ 150 tỷ USD sau một năm; hay Anthropic được định giá từ 60 tỷ lên 170 tỷ USD sau ba tháng.
+"Xét trên nhiều phương diện, định giá thị trường đang bị thổi phồng, đặc biệt đối với các công ty tập trung vào trí tuệ nhân tạo, khiến thị trường dễ bị tổn thương nếu kỳ vọng về tác động của AI trở nên kém lạc quan", FPC bình luận.
+Eric Schmidt, 70 tuổi, khởi đầu sự nghiệp tại công ty công nghệ Bell Labs, Zilog và trung tâm nghiên cứu Palo Alto của Xerox. Tháng 3/2001, ông trở thành Chủ tịch Google. Đến tháng 8/2001, ông nhậm chức CEO của công ty. Tháng 8/2006, ông được chọn vào hội đồng quản trị Apple nhưng từ chức sau ba năm. Tháng 4/2011, ông rời vị trí CEO Google, sau đó đầu tư vào nhiều công ty khởi nghiệp về AI. Ông từng nói việc quản lý AI cần được thực hiện sao cho không kìm hãm sự đổi mới, theo Business Insider.
+ ',
+ 'CNghe_12.jpg',
+ '2025-10-10',
  'PV004',
  1640,
- 'CAT009',
+ 'CAT001',
  1),
 ('NEWS013',
- N'Giải trí kỹ thuật số thống trị màn ảnh nhỏ',
- N'Nội dung video ngắn và nền tảng streaming đang chiếm lĩnh thị trường.',
- 'digital_entertainment.jpg',
- '2025-08-01',
+ N'Gói ChatGPT rẻ nhất được triển khai tại Việt Nam',
+ N'ChatGPT Go, gói thuê bao AI giá 4 USD hay 132.000 đồng mỗi tháng được OpenAI triển khai tại Việt Nam.
+Từ chiều 9/10, khi đăng ký thuê bao ChatGPT, nhiều người dùng trong nước nhận ra sự xuất hiện của gói Go trên trang. Đây là gói thấp nhất của OpenAI, có giá 4 USD mỗi tháng. Trước đó, công ty chỉ cung cấp hai gói thuê bao tại Việt Nam gồm Plus giá 20 USD và Pro giá 200 USD.
+Với gói cước mới, người dùng có thể mua trực tiếp trên web và quy đổi theo tỷ giá, hoặc mua thông qua các chợ ứng dụng. Ví dụ trên Android, ChatGPT Go có thể được đăng ký với giá 120.000 đồng chưa kèm VAT, trong khi trên iOS, giá thuê bao là 132.000 đồng.
+Trên trang giới thiệu, OpenAI cho biết Go vừa được tung ra ngày 9/10 tại 18 thị trường, trong đó có Việt Nam. Một số thị trường khác có thể kể đến Ấn Độ, Pakistan, Philippines, Indonesia, Thái Lan.
+So với thuê bao miễn phí, gói Go cho phép truy cập nhiều tính năng hơn, như chat nhiều hơn với GPT-5, tạo hình ảnh, tải tệp tin, truy cập vào các GPT tùy chỉnh. Tuy nhiên, người dùng chưa thể sử dụng một số tính năng cao cấp như chế độ nghiên cứu sâu Deep Research, Agent, hay trình tạo video Sora, lập trình bằng Codex.
+Trước đó, cuối tháng 9, Google cũng ra gói AI Plus giá 122.000 đồng, cho phép truy cập vào tính năng và công cụ AI chính như Gemini tích hợp trong Gmail, Drive; quyền truy cập mô hình 2.5 Pro, Veo 3 với các công cụ như Flow, Whisk, sử dụng đầy đủ tính năng của NotebookLM.
+Ngoài ra, một công ty Việt Nam là Misa cũng tung ra gói dịch vụ AI với giá từ 500.000 đồng mỗi tháng, cho phép sử dụng nhiều mô hình AI cùng lúc và có thể chia sẻ cho năm người cùng sử dụng. 
+ ',
+ 'CNghe_13.jpg',
+ '2025-10-10',
  'PV005',
  2100,
- 'CAT006',
+ 'CAT001',
  1),
 ('NEWS014',
- N'Khoa học dữ liệu – nghề hot của tương lai',
- N'Nhu cầu nhân lực data science tăng mạnh trong các công ty công nghệ.',
- 'data_science.jpg',
- '2025-08-09',
+ N'Google bắt đầu tặng gói AI gần 6 triệu đồng cho sinh viên Việt',
+ N'Gói Google AI Pro trị giá 489.000 đồng mỗi tháng bắt đầu được Google tặng cho sinh viên tại Việt Nam trong một năm, từ 8/10.
+Trong thông báo chiều 8/10, Google đánh giá sinh viên Việt Nam đang dẫn đầu làn sóng ứng dụng AI. Dẫn thống kê của Decision Lab tháng 8, hãng cho biết 92% sinh viên trong nước đang sử dụng AI để nâng cao hiệu quả học tập và phát triển kỹ năng. Nhóm này đang sử dụng Gemini cho nhiều mục đích, như tìm hiểu các chủ đề phức tạp, chuẩn bị phỏng vấn xin việc, gợi ý ý tưởng sáng tạo...
+Để hỗ trợ nhiều hơn, Google triển khai chương trình một năm sử dụng miễn phí gói AI Pro cho sinh viên từ 18 tuổi trở lên.
+Sinh viên có thể truy cập trang đăng ký thuê bao Gemini và ở gói AI Pro sẽ xuất hiện tùy chọn "Miễn phí cho sinh viên". Họ cần xác minh bằng cách điền họ tên, ngày sinh và email. Thông tin sinh viên sẽ được xác thực qua hệ thống Sheerid. Thời gian đăng ký từ nay đến ngày 9/12.
+AI Pro là gói thuê bao AI cao cấp thứ hai của Google sau AI Ultra. Ngoài 2 TB dung lượng lưu trữ, gói sử dụng mô hình Gemini 2.5 Pro, cho phép người dùng truy cập vào toàn bộ các công cụ AI tiên tiến của hãng như Deep Research, NotebookLM, trao đổi ý tưởng bằng giọng nói với Gemini Live, tạo video từ văn bản với Veo 3, nhận hỗ trợ từ AI trong Gmail, Docs, Sheets.
+Trước đó, một startup của Việt Nam là AI Hay cũng tặng tài khoản Pro với giá 300.000 đồng/tháng cho sinh viên, giảng viên trường đại học tại Việt Nam trong 12 tháng. Người sử dụng tài khoản có thêm các tính năng cao cấp như tải file dữ liệu, đặt gần 1.000 câu hỏi mỗi ngày, cùng mô hình AI tiên tiến với dữ liệu cập nhật thời gian thực. Trong giáo dục, nền tảng hỗ trợ giải bài tập các môn, vẽ sơ đồ tư duy, tra cứu tài liệu.
+"Chúng tôi tin nếu muốn phổ cập AI cho 100 triệu người Việt, giáo dục nên là nơi bắt đầu", Giám đốc vận hành AI Hay nhận định.
+Trong khảo sát của Decision Lab về cách dùng AI của người Việt, ChatGPT được coi là "trợ thủ đa năng" cho dịch thuật, nghiên cứu và công việc chuyên môn, trong khi Gemini và DeepSeek đóng vai trò hỗ trợ học kỹ năng, kiến thức mới, AI Hay trở thành "cầu nối giữa giáo dục và giải trí", thường được dùng để học tập và bắt kịp xu hướng đang thịnh hành, Meta AI được ưa chuộng cho trò chuyện thường ngày.
+Người Việt ứng dụng AI trong nhiều hoạt động, nổi bật là để trò chuyện, với tỷ lệ 40%; cập nhật thông tin công việc 37%; học kỹ năng và kiến thức mới 34%; dịch thuật 33%. 
+ ',
+ 'CNghe_14.jpg',
+ '2025-10-08',
  'PV006',
  1920,
- 'CAT010',
+ 'CAT001',
  0),
 ('NEWS015',
- N'Việt Nam đạt thành tích cao tại Olympic Toán học',
- N'Học sinh Việt Nam tiếp tục ghi dấu ấn trên đấu trường quốc tế.',
- 'math_olympic.jpg',
- '2025-08-17',
+ N'Giải pháp AI giúp doanh nghiệp dược "đi ít, bán nhiều"',
+ N'SalesMate - nền tảng AI của FPT, chuyên phân tích dữ liệu, gợi ý đơn, kịch bản tư vấn, đồng thời phát hiện sớm bất thường, hỗ trợ doanh nghiệp dược tối ưu hành trình bán hàng.
+Việt Nam có hơn 50.000 nhà thuốc, trong đó 85% quy mô nhỏ lẻ. Trong thị trường cạnh tranh, chỉ cần một chương trình khuyến mãi từ đối thủ, nhà thuốc có thể thay đổi ưu tiên nhập hàng. Doanh nghiệp dược đối diện nguy cơ mất khách nếu không theo dõi kịp thời những tín hiệu sớm như đơn nhập giảm hay chu kỳ đặt hàng kéo dài.
+AI thay đổi cách bán hàng
+SalesMate được phát triển nhằm giải quyết bài toán này. Nền tảng phân tích dữ liệu bán hàng, đề xuất danh sách khách hàng ưu tiên, gợi ý đơn hàng tối ưu và cung cấp thông tin sản phẩm, chính sách khuyến mãi ngay trên ứng dụng di động. Nhờ đó, trình dược viên giảm một nửa số điểm đến mỗi ngày, tập trung nhiều thời gian hơn cho từng nhà thuốc.
+Chị Lan - một trình dược viên tại Hà Nội - trước đây phải ghé hơn 10 nhà thuốc mỗi ngày. Nhiều lần, chị quên những chi tiết quan trọng như tỷ lệ giảm đơn nhập hàng của nhà thuốc, hay lúng túng khi khách hàng hỏi chương trình ưu đãi vì chưa kịp cập nhật. Theo chị, những sai sót này ảnh hưởng đến hiệu quả công việc. Nhưng điều này thay đổi khi doanh nghiệp ứng dụng SalesMate.
+Cụ thể, nền tảng giúp hành trình của chị rút ngắn tới nửa số điểm đến trọng tâm. Hệ thống phân tích dữ liệu, đề xuất khách hàng ưu tiên, gợi ý đơn hàng tối ưu và cung cấp sẵn thông tin tư vấn... Trong vài giây, danh sách nhà thuốc cần ưu tiên ghé thăm hiện ra, kèm lịch sử giao dịch, sản phẩm đang giảm nhập, chính sách khuyến mãi phù hợp và thậm chí gợi ý cách mở đầu cuộc trò chuyện... Trong mỗi buổi gặp, khi chủ nhà thuốc hỏi thông tin về công dụng hay chương trình khuyến mãi, chị không còn lúng túng. SalesMate chuẩn bị sẵn dữ liệu, giúp chị trả lời nhanh chóng và thống nhất.
+"Trước kia, tôi rất sợ bị khách hỏi bất ngờ. Giờ chỉ cần mở ứng dụng là có thông tin, thậm chí còn gợi ý thêm sản phẩm liên quan. Đi làm nhẹ đầu hơn rất nhiều", chị Lan nói.
+Chuẩn hóa đội ngũ tăng hiệu quả triển khai
+Theo bà Trần Minh Nguyệt, Giám đốc triển khai AI tại FPT Digital, một thách thức khác của doanh nghiệp dược là năng lực trình dược viên thường không đồng đều. Người nhiều kinh nghiệm có thể xử lý tình huống tốt, trong khi nhân viên mới dễ bị lúng túng. SalesMate giúp chuẩn hóa kỹ năng toàn đội ngũ khi tạo ra khả năng tư vấn thống nhất, cập nhật kịp thời thông tin. Đơn vị từ đó giảm chi phí đào tạo lại, nâng cao hình ảnh chuyên nghiệp và duy trì chất lượng dịch vụ ổn định trên toàn hệ thống.
+SalesMate còn cung cấp khả năng theo dõi quá trình bán hàng, phát hiện sớm nguy cơ mất khách và đưa ra quyết định dựa trên dữ liệu. Thời gian chuẩn bị trước mỗi cuộc gặp nhà thuốc giảm, kèm theo số liệu phân tích giúp tỷ lệ chốt đơn tăng và giá trị đơn hàng trung bình cao hơn... 
+Bà Nguyệt cho biết hệ thống có thể triển khai trong 2–3 tháng, không yêu cầu đầu tư hạ tầng phức tạp, nhờ tận dụng dữ liệu sẵn có từ phần mềm quản lý phân phối. "SalesMate giúp tăng doanh số nhờ đơn hàng tối ưu, giảm rủi ro mất khách bằng cảnh báo sớm và nâng cao năng lực đội ngũ bán hàng", bà nói.
+Nhìn nhận về thị trường, bà Nguyệt cho rằng ngành dược trước đây vốn tiếp cận thị trường dựa nhiều vào kinh nghiệm cá nhân, nhưng hiện nay thì quản trị bằng dữ liệu và AI đang trở thành xu hướng không thể đảo ngược. AI không thay thế con người, ngược lại, hệ thống sẽ hỗ trợ để nhân sự làm tốt hơn vai trò vốn có. "Với doanh nghiệp dược, việc mất một nhà thuốc có thể kéo theo hiệu ứng dây chuyền. Công nghệ cho phép phát hiện sớm rủi ro và ra quyết định dựa trên dữ liệu, thay vì cảm tính", đại diện FPT Digital nêu.
+ ',
+ 'CNghe_15.jpg',
+ '2025-10-08',
  'PV007',
  870,
- 'CAT003',
+ 'CAT001',
  1),
 ('NEWS016',
- N'Các ngân hàng đẩy mạnh chuyển đổi số',
- N'Công nghệ giúp giao dịch nhanh chóng, giảm chi phí vận hành và tăng bảo mật.',
- 'digital_banking.jpg',
- '2025-08-25',
+ N'OpenAI chi hàng chục tỷ USD mua chip và cổ phiếu AMD',
+ N'OpenAI và AMD công bố thỏa thuận hợp tác trị giá hàng tỷ USD để cùng phát triển các trung tâm dữ liệu AI được vận hành bằng bộ vi xử lý của hãng chip.
+Cụ thể, OpenAI sẽ mua số chip AMD tương đương 6 gigawatt, bắt đầu với dòng MI450 ra mắt năm sau. Việc mua bán sẽ được thực hiện trực tiếp với AMD hoặc thông qua các đối tác cung cấp dịch vụ điện toán đám mây.
+Lisa Su, CEO AMD, nói với WSJ rằng thỏa thuận sẽ mang lại hàng chục tỷ USD doanh thu trong 5 năm tới. Hai bên không tiết lộ cụ thể, nhưng hãng nhấn mạnh mỗi gigawatt công suất đã trị giá chục tỷ USD, do đó tổng hợp đồng có thể vượt 60 tỷ USD.
+Đổi lại, OpenAI nhận được quyền mua đến 160 triệu cổ phiếu AMD, tương đương 10% cổ phần công ty, với giá 0,01 USD mỗi cổ phiếu. Quyền mua chia theo từng giai đoạn, miễn là OpenAI đạt các mốc triển khai đã thỏa thuận. Các điều khoản chi tiết chưa được công bố.
+Thỏa thuận được đánh giá là chiến thắng lớn cho AMD, diễn ra ngay sau khi Nvidia công bố hợp tác chiến lược với Intel tháng trước. Trong đó, Nvidia và Intel sẽ cùng phát triển bộ xử lý hệ thống x86 RTX dành cho máy tính cá nhân, tích hợp đồ họa Nvidia, đồng thời phát triển bộ xử lý trung tâm dữ liệu x86 tùy chỉnh cho Nvidia.
+Trong khi đó, OpenAI sẽ sử dụng chip AMD cho các tác vụ suy luận để đáp ứng nhu cầu ngày càng tăng mạnh. Thỏa thuận cho thấy cơn khát sức mạnh tính toán ngày càng tăng của OpenAI và toàn ngành AI, trong bối cảnh các công ty chạy đua phát triển trí tuệ nhân tạo có khả năng sánh ngang hoặc vượt con người. "Rất khó diễn tả hết mức độ thách thức hiện nay... Chúng tôi muốn mọi thứ thật nhanh, nhưng quá trình này cần thời gian", CEO OpenAI Sam Altman nói với WSJ. Còn bà Su cho biết dự án sẽ "đưa năng lực tính toán AI lên quy mô khổng lồ".
+Trước đó, ngày 22/9, Nvidia thông báo kế hoạch đầu tư 100 tỷ USD vào OpenAI nhằm triển khai các hệ thống 10 gigawatt để vận hành cơ sở hạ tầng AI thế hệ tiếp theo. Một số nguồn tin nói Nvidia sẽ đầu tư thông qua việc mua cổ phần không có quyền biểu quyết, còn công ty sở hữu ChatGPT sẽ dùng nguồn vốn này để mua chip Nvidia.
+ ',
+ 'CNghe_16.jpg',
+ '2025-10-08',
  'PV008',
  990,
- 'CAT005',
+ 'CAT001',
  1),
 ('NEWS017',
- N'Công nghệ VR thay đổi cách học ngoại ngữ',
- N'Học viên có thể tương tác thực tế trong môi trường ảo để luyện nói.',
- 'vr_learning.jpg',
- '2025-09-02',
+ N'Elon Musk nhắm vào những người rời xAI sang OpenAI',
+ N'Cuộc chiến nhân tài AI ở Thung lũng Silicon trở nên khốc liệt khi Elon Musk liên tiếp khởi kiện những chuyên gia rời xAI sang công ty đối thủ.
+Một buổi sáng, một giám đốc tài chính của xAI bất ngờ nhận email từ Alex Spiro, luật sư của Musk: "Chúng tôi phát hiện ông có một số hành vi vi phạm về nghĩa vụ bảo mật với xAI. Vui lòng chấm dứt lập tức". Người này sau đó được xác định là Mike Liberatore. Đầu tháng 9, WSJ cho biết ông đã gia nhập OpenAI.
+Đây là một phần trong đơn kiện do xAI trình lên tòa án liên bang California chống lại OpenAI tháng trước. Musk cáo buộc công ty của Sam Altman đánh cắp bí mật thương mại và cạnh tranh không lành mạnh. Ngoài giám đốc tài chính, Musk còn cáo buộc hai kỹ sư Xuechen Li và Jimmy Fraiture "đào tẩu" sang OpenAI mang theo những thông tin có giá trị.
+"OpenAI sẽ làm bất cứ điều gì khi bị đe dọa, gồm cả việc cướp và chiếm đoạt nhân sự, các tiến bộ kỹ thuật, mã nguồn và kế hoạch kinh doanh", theo hồ sơ xAI gửi lên tòa án.
+OpenAI phủ nhận, tố cáo ngược Musk thực hiện "chiến dịch đe dọa" công ty.
+Ngoài đơn kiện chung, xAI của Musk kiện riêng Xuechen Li, kỹ sư người Trung Quốc, lên tòa án California, cho rằng ông lấy cắp dữ liệu từ xAI, chatbot Grok và "che giấu dấu vết". Tháng trước, thẩm phán đã ban hành lệnh cấm tạm thời, không cho phép Li gia nhập OpenAI.
+xAI cũng đệ đơn kiện Jimmy Fraiture lên Tòa án tối cao London (Anh), cáo buộc người này "sao chép, lưu giữ, tiết lộ và sử dụng sai trái bí mật thương mại", yêu cầu bồi thường gần 270.000 USD. Fraiture là một trong 50 nhân viên đầu tiên của xAI. Ông được cho là đã tải xuống mã nguồn của xAI bằng tính năng Airdrop trên MacBook vào ngày trước khi từ chức.
+Travers Smith, luật sư của Fraiture, nói thân chủ của mình đã đưa ra quyết định "vội vàng và đáng tiếc", nhưng "kịch liệt phủ nhận" việc có ý định sử dụng mã để "mang lại lợi ích cho OpenAI". Li không đưa ra bình luận.
+Theo các hồ sơ tòa án do Telegraph thu thập, có 8 giám đốc và kỹ sư cấp cao rời xAI để gia nhập OpenAI. Bên cạnh đó, một số vị trí khác thuộc công ty do Musk quản lý, như David Lau, cựu giám đốc phần mềm Tesla, cũng đã đầu quân cho doanh nghiệp của Altman.
+Trong loạt đơn kiện, Musk và xAI cho rằng nhân tài của mình bị OpenAI lôi kéo. Tuy nhiên, một số người nói họ không chịu được phong cách lãnh đạo của tỷ phú Mỹ, như việc tham gia quá sâu vào chính trị, hay chật vật theo kịp cách làm việc không ngừng nghỉ của ông. Trên blog, Rob Keele, từng là luật sư của xAI, cho biết có "sự khác biệt về quan điểm thế giới" của ông so với Musk, thêm rằng bản thân phải lựa chọn giữa "gia đình và công việc".
+"Cần làm rõ: OpenAI không cần hoặc không muốn bí mật thương mại của bất kỳ ai, kể cả xAI", đại diện OpenAI nói với Telegraph. "Mọi thứ rõ ràng được thiết kế nhằm bắt nạt và đe dọa công khai những người đã nghỉ việc muốn làm cho các công ty AI khác. Nhân viên của xAI đang bỏ chạy".
+Theo WSJ, dù chưa có thống kê chi tiết, cuộc cạnh tranh nhân tài AI ngày một khốc liệt. Các doanh nghiệp đang "trong cơn điên cuồng", với những thỏa thuận bí mật, từ mức đãi ngộ hấp dẫn đến sự phản bội, "lật kèo" vào phút chót. Các CEO quyền lực trong lĩnh vực công nghệ sẵn sàng đưa ra gói lương trị giá trăm triệu USD mỗi năm cho những nhân viên được coi trọng nhất.
+Musk và OpenAI từ lâu đã có hiềm khích. Ông đồng sáng lập OpenAI với Sam Altman năm 2015, nhưng rời đi năm 2018 sau nỗ lực giành quyền kiểm soát bất thành. Ông tố cáo Altman phá vỡ "thỏa thuận sáng lập" rằng OpenAI sẽ hoạt động vì sự tiến bộ của nhân loại, đánh giá việc hợp tác với Microsoft và theo đuổi lợi nhuận vi phạm nguyên tắc của công ty. Tuy nhiên, OpenAI và Altman khẳng định Musk trước đây ủng hộ mô hình vì lợi nhuận và hiện trả đũa vì ghen tị. 
+ ',
+ 'CNghe_17.jpg',
+ '2025-10-07',
  'PV001',
  760,
- 'CAT003',
+ 'CAT001',
  0),
 ('NEWS018',
- N'Thời tiết cực đoan gia tăng do biến đổi khí hậu',
- N'Nhiều khu vực ghi nhận mức nhiệt cao kỷ lục và bão dữ dội hơn.',
- 'climate_change.jpg',
- '2025-09-10',
+ N'Sora 2 gây lo ngại vì tạo video chân thực',
+ N'Nhiều khu vực ghi nhận mức nhiệt cao kỷ lục và bão dữ dội hơn.
+Công cụ Sora 2 được đánh giá có thể tạo video "thật" hơn nhiều so với phiên bản đầu, nhưng gây lo ngại về nội dung giả mạo.
+Ngày 30/9, OpenAI ra mắt trình tạo video Sora 2 sau hơn một năm giới thiệu phiên bản đầu. Công ty khẳng định AI mới "tuân thủ định luật vật lý tốt hơn, giúp hình ảnh chân thực hơn".
+Sau quá trình thử nghiệm, trang DataCamp nhận xét video của Sora 2 "tuân theo chỉ dẫn phức tạp" tốt hơn, như duy trì sự đồng nhất xuyên suốt về nhân vật, ánh sáng, không gian giữa các cảnh, chuỗi hành động cũng được thực hiện nhất quán. Trong khi đó, Skywork cho rằng AI mới nổi bật vì người bình thường không cần kỹ thuật cao vẫn có thể dựng video ấn tượng. Tính năng Cameos tự chèn khuôn mặt vào người trong video được đánh giá hấp dẫn. TechRadar nhận định video AI cho cảm giác chân thực, khả năng gợi ý và kiểm soát khung hình mạnh hơn.
+Tuy nhiên, sức mạnh của Sora 2 khiến nhiều người lo ngại, sau khi tài khoản X Gabriel đăng video với nội dung "Đoạn phim từ camera an ninh: Sam Altman ăn cắp GPU cửa hàng" vào ngày 1/10, hiện đạt 11,2 triệu lượt xem. Trong đó, một người có khuôn mặt giống CEO OpenAI đang lấy trộm card đồ họa. Khi bị bảo vệ phát hiện, anh ta nói: "Làm ơn, tôi thực sự cần thứ này để suy luận". Các chi tiết được đánh giá rất giống cảnh quay do camera an ninh ghi lại, kể cả cách di chuyển, đổ bóng, khuôn mặt và giọng nói của Altman. Gabriel cho biết anh tạo video từ Sora 2 với tính năng Cameos.
+Trong phần bình luận, nhiều người cho rằng nếu không có chú thích và lời thoại, họ sẽ nhầm đây là video thật. "Sora 2 có thể lan truyền thông tin sai lệch hoặc bị lợi dụng để quấy rối và bắt nạt", trang PC Gamer nhận xét.
+Khi giới thiệu Sora 2, OpenAI cho biết để sử dụng Cameos, người dùng phải tải lên một bản ghi âm và video nhằm xác minh danh tính và diện mạo, tránh tình trạng deepfake mạo danh. Tuy nhiên, NSS Magazine ghi nhận nhiều tài khoản đang dễ dàng yêu cầu Sora 2 ghép khuôn mặt và giọng nói của Sam Altman vào video. "Điều đó cho thấy hệ thống kiểm duyệt của Sora 2 chưa hoạt động hiệu quả", trang này bình luận.
+Theo Guardian, chỉ thời gian ngắn sau khi Sora 2 ra mắt, nhiều video với nội dung đánh bom, xả súng cũng xuất hiện và gây hoang mang. Giới chuyên gia nhận định các công cụ như Sora 2 đang cho thấy việc phân biệt sự thật và hư cấu sẽ khó khăn hơn nhiều thời gian tới, nếu video AI xuất hiện vô tội vạ và vượt ngoài tầm kiểm soát. "Chúng tạo nội dung sai sự thật nhưng lại rất thuyết phục", phó giáo sư Joan Donovan của Đại học Boston, chuyên gia nghiên cứu về thao túng truyền thông và thông tin sai lệch, nói với Guardian. "Khi kẻ xấu có được công cụ thế này, chúng sẽ sử dụng để gây thù hận, quấy rối và kích động".
+OpenAI chưa đưa ra bình luận.
+Một vấn đề khác của Sora 2 liên quan đến bản quyền. Theo WSJ, nhiều nội dung tạo từ AI này "lấy cảm hứng từ tác phẩm được bảo hộ". Trong khi đó, Business Insider ghi nhận mạng xã hội tràn ngập video AI với hình ảnh diễn viên, nhân vật hoạt hình nổi tiếng và các thương hiệu lớn.
+Trên blog cuối tuần trước, CEO Altman cho biết OpenAI đã "tiếp thu phản hồi" từ những người nắm giữ bản quyền, đồng thời sẽ cung cấp cho họ "quyền kiểm soát chi tiết hơn". Ngoài ra, công ty sẽ thử nghiệm việc chia sẻ một phần doanh thu với những tác giả cho phép người khác sử dụng tác phẩm của họ.
+Cuối tháng trước, OpenAI "tư vấn" cho các hãng phim và công ty nắm giữ bản quyền rằng họ có thể từ chối việc sản phẩm của mình xuất hiện trong video Sora bằng cách đưa ra "yêu cầu rõ ràng". Business Insider cho rằng đây là đòi hỏi vô lý vì "OpenAI dường như cố gắng viết lại luật bản quyền theo cách nhanh chóng nhất: Nội dung của bạn là nội dung của chúng tôi, miễn phí, trừ khi bạn yêu cầu chúng tôi làm khác đi".
+Việc các công ty sử dụng tài liệu có bản quyền để đào tạo AI là chủ đề gây tranh cãi thời gian qua do lĩnh vực này thiếu các quy tắc rõ ràng và thống nhất. Nhiều nghệ sĩ cũng phản đối mạnh mẽ, cho rằng AI đang cướp công việc của giới nghệ thuật, văn hóa. Theo Forbes, cơ hội việc làm ở lĩnh vực điện ảnh ngày càng thu hẹp khi AI làm giảm nhu cầu thuê nhân lực trong lĩnh vực như kỹ xảo, đồ họa, biên kịch, âm nhạc, âm thanh, hậu kỳ... Trong cuộc khảo sát của CVL Economics cuối tháng 1/2024, 3/4 số người tham gia cho rằng AI sẽ hỗ trợ loại bỏ, cắt giảm hoặc hợp nhất các công việc tại công ty của họ. 
+ ',
+ 'CNghe_18.jpg',
+ '2025-10-06',
  'PV002',
  1190,
- 'CAT007',
+ 'CAT001',
  1),
 ('NEWS019',
- N'Những xu hướng thể thao mới năm 2025',
- N'Người trẻ chuộng các môn thể thao ngoài trời và thể hình công nghệ.',
- 'sports_trends.jpg',
- '2025-09-18',
+ N'OpenAI và Jony Ive gặp khó khi tạo thiết bị AI',
+ N'OpenAI và nhà thiết kế Jony Ive được cho là đối mặt với một số thách thức kỹ thuật khi phát triển thiết bị không màn hình tích hợp AI.
+Theo FT, hai bên đang đặt mục tiêu tạo ra một thiết bị AI nhỏ bằng lòng bàn tay, không màn hình, có thể nhận tín hiệu âm thanh và hình ảnh từ môi trường vật lý, cho phép phản hồi yêu cầu từ người dùng. Tuy nhiên, dự án gặp vấn đề lớn liên quan đến cách thiết bị hoạt động và cơ sở hạ tầng AI.
+Rào cản đầu tiên là khả năng phản hồi. Một nguồn tin cho biết, thiết bị sẽ ở chế độ "luôn sẵn sàng" để nghe lệnh từ người dùng. Tuy nhiên, nhóm nghiên cứu gặp khó khăn trong việc đảm bảo máy "chỉ phản hồi khi cần và kết thúc cuộc trò chuyện vào lúc thích hợp".
+Một thách thức khác là kết nối sản phẩm với máy chủ AI từ xa. "Amazon đáp ứng khả năng phản hồi nhanh chóng cho Alexa. Google cũng vậy. Còn OpenAI vẫn đang tìm cách xử lý vấn đề này trên thiết bị AI của họ", nguồn tin cho biết.
+OpenAI và Jony Ive chưa đưa ra bình luận.
+Trước đó, WSJ đưa tin thiết bị hợp tác giữa OpenAI và Jony Ive có kích thước gần bằng một smartphone, cho phép người dùng giao tiếp thông qua camera, micro và loa, có thể đặt trên bàn làm việc hoặc mang theo. Máy trang bị nhiều cảm biến để ghi nhận môi trường xung quanh, đồng thời tương tác với người dùng để xây dựng bộ dữ liệu cá nhân hóa.
+Hồi tháng 5, OpenAI mua lại IO - công ty khởi nghiệp do Ive và Sam Altman đồng sáng lập với giá 6,5 tỷ USD. Công ty được giới thiệu là "tập hợp các kỹ sư phần cứng và phần mềm giỏi nhất" để phát triển và sản xuất thiết bị AI. Khi IO sáp nhập vào OpenAI, Ive đảm nhận thiết kế sâu và sáng tạo cho sản phẩm trong tương lai.
+Cũng trong tháng 5, nhà phân tích nổi tiếng Ming-Chi Kuo cho biết thiết bị AI mới này dự kiến sản xuất hàng loạt trong năm 2027 và được lắp ráp tại Việt Nam.
+Jony Ive được xem là thiên tài về thiết kế khi đứng sau kiểu dáng của hàng loạt thiết bị mang tính biểu tượng Apple như iPhone, iPad, MacBook. Ông rời Apple năm 2019 sau gần ba thập kỷ làm việc. 
+ ',
+ 'CNghe_19.jpg',
+ '2025-10-06',
  'PV003',
  1520,
- 'CAT004',
+ 'CAT001',
  0),
 ('NEWS020',
- N'AI trong sáng tạo nghệ thuật',
- N'Nghệ sĩ và AI hợp tác tạo nên các tác phẩm độc đáo, gây nhiều tranh cãi.',
- 'ai_art.jpg',
- '2025-09-25',
+ N'Ông chủ ChatGPT tiết lộ công việc sẽ làm nếu bị AI thay thế',
+ N'Sam Altman, CEO OpenAI, cho biết nếu bị AI thay thế, ông sẽ không xây dựng startup hay dự án công nghệ đột phá khác, mà làm việc trong trang trại.
+"Tôi nghĩ sẽ đến lúc AI có thể đảm nhận vị trí CEO OpenAI tốt hơn tôi nhiều, và tôi sẽ rất hào hứng khi ngày đó đến", Altman nói trong cuộc phỏng vấn với Mathias Dopfner, CEO của Axel Springer, tuần này.
+Đứng đầu danh sách những việc Altman muốn làm là chăm sóc trang trại. "Tôi có một trang trại, thỉnh thoảng về đó sống và thực sự thích nó", ông chia sẻ. Nhiều năm qua, ông cũng mua những bất động sản trị giá hàng triệu USD ở San Francisco, Napa, và một bất động sản 43 triệu USD tại Hawaii. Trước khi ChatGPT thành công, Altman cho biết có nhiều thời gian hơn ở trang trại, thường xuyên lái máy kéo và hái lượm.
+Altman cho rằng ngày máy móc trở nên thông minh hơn con người đang đến rất gần, thậm chí trong một số lĩnh vực, việc đó đã xảy ra. "Trong ngắn hạn, AI sẽ phá hủy rất nhiều việc làm. Về lâu dài, giống như mọi cuộc cách mạng công nghệ khác, tôi cho rằng chúng ta sẽ tìm ra những điều hoàn toàn mới để làm", ông nói và gợi ý những công việc đó có thể liên quan đến hỗ trợ người khác. Ông nhận định, điều làm nên sự độc đáo của con người không phải "năng lực trí tuệ" mà là cách quan tâm lẫn nhau.
+Trong cuộc phỏng vấn tuần trước với WELT, Altman dự đoán AI sẽ vượt qua trí thông minh của con người vào năm 2030. "Ngoài ra, năm 2026, nếu tốc độ tiến bộ không tương đương năm 2024 và 2025 thì tôi sẽ rất ngạc nhiên. Điều đó nghĩa là đến cuối 2026, tôi kỳ vọng các mô hình AI sẽ đạt đến mức mà nếu xuất hiện ngay hôm nay, hẳn sẽ khiến chúng ta sửng sốt", ông nói thêm.
+Theo nghiên cứu do Đại học Stanford công bố ngày 26/8, tính từ cuối 2022, số lượng tin tuyển dụng cho các vị trí cấp thấp giảm 13% do tác động của AI. Nhóm nghiên cứu nhận định đây là sự thay đổi nhanh và rộng, có thể so sánh với làn sóng làm việc từ xa trong đại dịch.
+Khảo sát chỉ ra những ngành nghề chịu ảnh hưởng nặng nhất là công việc mang tính lặp lại hoặc dễ tự động hóa như thư ký, trợ lý hành chính. Vị trí có tiềm năng bị AI tác động trong tương lai là lập trình viên cấp thấp và chăm sóc khách hàng. Những công việc này vốn được xem là cánh cửa cho người trẻ tích lũy kinh nghiệm, nhưng nay dần thu hẹp, làm dấy lên lo ngại khi các lãnh đạo cấp cao nghỉ hưu và thiếu đội ngũ kế cận có kinh nghiệm từ vị trí cấp thấp đi lên. 
+ ',
+ 'CNghe_20.jpg',
+ '2025-10-06',
  'PV004',
  1780,
- 'CAT006',
+ 'CAT001',
  1),
 ('NEWS021',
  N'Sam Altman - chênh vênh giữa người hùng và kẻ phản diện',
