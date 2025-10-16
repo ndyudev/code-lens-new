@@ -39,7 +39,7 @@
 
     <!-- Cột 3 -->
     <div class="footer-col">
-      <h3>Đăng Ký Tư Vấn</h3>
+      <h3>Nhận thông báo về tin mới</h3>
       <form>
         <input type="text" placeholder="Email">
         <button type="submit">Gửi</button>

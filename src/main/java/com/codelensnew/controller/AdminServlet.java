@@ -1,4 +1,4 @@
-package cln;
+package com.codelensnew.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,36 +7,30 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Servlet implementation class ReporterServlet
- */
-@WebServlet("/Reporter")
-public class ReporterServlet extends HttpServlet {
+@WebServlet("/AdminServlet")
+public class AdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public ReporterServlet() {
+	public AdminServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String page = request.getParameter("page");
 		if (page == null || page.isEmpty()) {
-			page = "post";
+			page = "dashboard";
 		}
-		
+
 		// Set page vào request để JSP có thể sử dụng
 		request.setAttribute("page", page);
-		
+
 		// Forward đến layout admin
-		request.getRequestDispatcher("/views/layouts/admin/layoutReporter.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/layouts/admin/layoutAdmin.jsp").forward(request, response);
 	}
 
 	/**
@@ -45,7 +39,6 @@ public class ReporterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

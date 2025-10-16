@@ -1,4 +1,4 @@
-package cln;
+package com.codelensnew.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -33,10 +33,10 @@ public class CodeLensNew extends HttpServlet {
 		if (tab == null || tab.isEmpty()) {
 			tab = "home";
 		}
-		
+
 		// Set tab vào request để JSP có thể sử dụng
 		request.setAttribute("tab", tab);
-		
+
 		// Forward đến layout user
 		request.getRequestDispatcher("/views/layouts/user/layoutUser.jsp").forward(request, response);
 	}

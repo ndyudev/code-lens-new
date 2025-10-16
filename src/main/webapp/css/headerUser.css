@@ -6,13 +6,16 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Topbar */
+/* 🔹 Topbar */
 .topbar {
   background: #fff;
-  padding: 6px 0;
+  padding: 8px 0;
   border-bottom: 1px solid #eee;
   font-size: 14px;
   color: #333;
+  z-index: 1000;
+  position: sticky;
+  top: 0;
 }
 .topbar .container {
   max-width: 1200px;
@@ -21,23 +24,22 @@
   justify-content: space-between;
   align-items: center;
 }
-.topbar .left span {
-  margin-right: 20px;
-}
 .topbar .right a {
   margin-left: 15px;
   color: #007bff;
-  font-size: 16px;
   transition: 0.3s;
 }
 .topbar .right a:hover {
   color: #0056b3;
 }
 
-/* Navbar */
+/* 🔹 Navbar */
 .navbar {
   background: #001a66;
   padding: 12px 0;
+  position: sticky;
+  top: 32px;
+  z-index: 999;
 }
 .navbar .container {
   max-width: 1200px;
@@ -46,46 +48,126 @@
   align-items: center;
   justify-content: space-between;
 }
+
+/* Logo */
 .logo img {
   height: 45px;
 }
 
-/* Menu giữa */
+/* 🔸 Menu chính */
 .menu {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 25px;
-  justify-content: center;
-  flex: 1;
+}
+.menu li {
+  position: relative;
 }
 .menu li a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
+  padding: 6px 10px;
 }
 .menu li a:hover {
   color: #00c3ff;
 }
 
-/* Search box phải */
-.search-box {
+/* 🔽 Dropdown mượt mà, không tắt khi hover chậm */
+.dropdown {
+  position: relative;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-toggle {
   display: flex;
   align-items: center;
-  background: #f5f5f5;
-  border-radius: 8px;
-  overflow: hidden;
+  gap: 4px;
 }
-.search-box input {
-  border: none;
-  outline: none;
-  padding: 6px 10px;
+
+/* Subnav menu */
+.dropdown-menu {
+  position: absolute;
+  top: 110%; /* Xích lên gần hơn menu chính */
+  left: 0;
+  background: #fff;
+  list-style: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  min-width: 240px;
+  padding: 8px 0;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.25s ease;
+  z-index: 1000;
+}
+
+/* Hiệu ứng hover từng item */
+.dropdown-menu li a {
+  display: block;
+  color: #001a66;
+  padding: 10px 18px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 14.5px;
+}
+
+.dropdown-menu li a:hover {
+  color: #007bff;
+  padding-left: 22px;
+}
+
+/* 👇 Giữ mở khi rê chuột xuống submenu */
+.menu li:hover .dropdown-menu,
+.dropdown-menu:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Icon mũi tên xuống */
+.dropdown-toggle i {
+  font-size: 11px;
+  transition: transform 0.25s ease;
+}
+.dropdown:hover .dropdown-toggle i {
+  transform: rotate(180deg);
+}
+
+/* 🔸 Login */
+.login-btn {
+  background: #fff;
+  color: #001a66;
+  border: 2px solid #001a66;
+  padding: 6px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 14px;
+  transition: 0.3s;
 }
-.search-box button {
-  border: none;
-  background: none;
-  padding: 6px 10px;
-  cursor: pointer;
-  font-size: 16px;
+.login-btn:hover {
+  background: #001a66;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* 🔹 Responsive */
+@media (max-width: 900px) {
+  .menu {
+    display: none;
+  }
 }
