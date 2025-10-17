@@ -2,15 +2,15 @@
 
 <div class="category-page">
     <div class="page-header">
-        <h1>🤖 AI & Machine Learning</h1>
-        <p>Tin tức mới nhất về trí tuệ nhân tạo và học máy</p>
+        <h1>🚀 Startup</h1>
+        <p>Tin tức về các startup công nghệ và khởi nghiệp</p>
     </div>
     
     <div class="news-grid">
         <div class="news-item">
             <a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=1">
                 <div class="news-image">
-                    <img src="${pageContext.request.contextPath}/images/new-img/CNghe_1.jpg" alt="AI bùng nổ">
+                    <img src="${pageContext.request.contextPath}/images/new-img/CNghe_1.jpg" alt="Startup">
                 </div>
                 <div class="news-content">
                     <h3>🔥 AI bùng nổ toàn cầu</h3>

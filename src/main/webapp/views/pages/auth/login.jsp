@@ -50,7 +50,7 @@
                     <h1>Đăng nhập</h1>
                     <p>Vui lòng nhập thông tin để tiếp tục</p>
                 </div>
-                <form class="auth-form" action="login" method="post">
+                <form class="auth-form" action="${pageContext.request.contextPath}/login" method="post">
                     <div class="form-group">
                         <label for="username">Tên đăng nhập</label>
                         <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>

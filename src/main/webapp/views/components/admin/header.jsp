@@ -24,33 +24,34 @@
   <div class="container">
     <!-- Logo -->
     <div class="logo">
-      <img src="${pageContext.request.contextPath}/images/codelensnew-logo-chu-ngang.svg" alt="Logo">
+      <a href="${pageContext.request.contextPath}/CodeLensNew">
+        <img src="${pageContext.request.contextPath}/images/codelensnew-logo-chu-ngang.svg" alt="Logo">
+      </a>
     </div>
 
     <!-- Menu chính -->
     <ul class="menu">
-      <li><a href="#">Trang chủ</a></li>
-      <li><a href="#">C</a></li>
-      <li><a href="#">Blog</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew">Trang chủ</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=technology">Công nghệ</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=programming">Lập trình</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=ai">AI & ML</a></li>
 
       <!-- 🔽 Menu thả xuống -->
       <li class="dropdown">
         <a href="#" class="dropdown-toggle">Danh mục <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Lập trình Back-End Java</a></li>
-          <li><a href="#">Lập trình Back-End NodeJS</a></li>
-          <li><a href="#">Lập trình Front-End</a></li>
-          <li><a href="#">Lập trình C++ Cơ bản tới Nâng cao</a></li>
-          <li><a href="#">Lập trình C++ Nâng cao</a></li>
-          <li><a href="#">Cấu trúc dữ liệu và giải thuật</a></li>
-          <li><a href="#">Lập trình C</a></li>
-          <li><a href="#">Lập trình Java và SQL</a></li>
-          <li><a href="#">Lập trình Python</a></li>
+          <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=technology">Công nghệ</a></li>
+          <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=programming">Lập trình</a></li>
+          <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=ai">AI & Machine Learning</a></li>
+          <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=blockchain">Blockchain</a></li>
+          <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=mobile">Mobile</a></li>
+          <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=startup">Startup</a></li>
+          <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=security">Bảo mật</a></li>
         </ul>
       </li>
     </ul>
 
     <!-- Login -->
-    <a href="#" class="login-btn"><i class="fas fa-user-circle"></i> Đăng nhập</a>
+    <a href="${pageContext.request.contextPath}/CodeLensNew?tab=login" class="login-btn"><i class="fas fa-user-circle"></i> Đăng nhập</a>
   </div>
 </header>
