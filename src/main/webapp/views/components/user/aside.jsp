@@ -16,37 +16,37 @@
     <!-- Chuyên mục nổi bật -->
     <h3 class="aside-user__title">Chuyên Mục Nổi Bật</h3>
     <ul class="aside-user__list">
-      <li><a href="#">New Feed</a></li>
-      <li><a href="#">Technical</a></li>
-      <li><a href="#">CTDL & Giải Thuật</a></li>
-      <li><a href="#">Công nghệ</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=technology">Công nghệ</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=programming">Lập trình</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=ai">AI & Machine Learning</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=blockchain">Blockchain</a></li>
     </ul>
 
     <!-- Được xem nhiều nhất -->
     <h3 class="aside-user__title">Được xem nhiều nhất</h3>
     <ul class="aside-user__list">
-      <li><a href="#">Top 5 ngôn ngữ lập trình 2025</a></li>
-      <li><a href="#">Lộ trình trở thành full stack</a></li>
-      <li><a href="#">Ứng dụng AI vào công việc</a></li>
-      <li><a href="#">Open AI tung model mới</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=1">AI bùng nổ toàn cầu</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=2">Phát minh y tế thông minh</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=3">Công nghệ 5G bùng nổ</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=4">Blockchain thay đổi tương lai</a></li>
     </ul>
 
     <!-- Bản tin mới nhất -->
     <h3 class="aside-user__title">Bản tin mới nhất</h3>
     <ul class="aside-user__list">
-      <li><a href="#">Top 5 ngôn ngữ lập trình 2025</a></li>
-      <li><a href="#">Lộ trình trở thành full stack</a></li>
-      <li><a href="#">Ứng dụng AI vào công việc</a></li>
-      <li><a href="#">Open AI tung model mới</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=1">🔥 AI bùng nổ toàn cầu</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=2">🧬 Phát minh y tế thông minh</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=3">⚡ Công nghệ 5G bùng nổ</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=4">🔗 Blockchain thay đổi tương lai</a></li>
     </ul>
 
     <!-- Bài viết gần đây -->
     <h3 class="aside-user__title">Bài Viết Gần Đây</h3>
     <ul class="aside-user__list">
-      <li><a href="#">Top 5 ngôn ngữ lập trình 2025</a></li>
-      <li><a href="#">Lộ trình trở thành full stack</a></li>
-      <li><a href="#">Ứng dụng AI vào công việc</a></li>
-      <li><a href="#">Open AI tung model mới</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=1">AI bùng nổ toàn cầu</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=2">Phát minh y tế thông minh</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=3">Công nghệ 5G bùng nổ</a></li>
+      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=4">Blockchain thay đổi tương lai</a></li>
     </ul>
   </div>
 </div>

@@ -2,22 +2,22 @@
 
 <div class="category-page">
     <div class="page-header">
-        <h1>🤖 AI & Machine Learning</h1>
-        <p>Tin tức mới nhất về trí tuệ nhân tạo và học máy</p>
+        <h1>🔒 Bảo mật</h1>
+        <p>Tin tức về bảo mật thông tin và an ninh mạng</p>
     </div>
     
     <div class="news-grid">
         <div class="news-item">
-            <a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=1">
+            <a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=4">
                 <div class="news-image">
-                    <img src="${pageContext.request.contextPath}/images/new-img/CNghe_1.jpg" alt="AI bùng nổ">
+                    <img src="${pageContext.request.contextPath}/images/new-img/CNghe_4.jpg" alt="Security">
                 </div>
                 <div class="news-content">
-                    <h3>🔥 AI bùng nổ toàn cầu</h3>
-                    <p>Trí tuệ nhân tạo đang làm thay đổi mọi lĩnh vực từ công nghệ, giáo dục đến sáng tạo nghệ thuật...</p>
+                    <h3>🔗 Blockchain thay đổi tương lai</h3>
+                    <p>Công nghệ blockchain đang mở ra nhiều cơ hội mới trong các lĩnh vực tài chính, y tế và giáo dục...</p>
                     <div class="news-meta">
-                        <span><i class="fas fa-calendar"></i> 15/10/2025</span>
-                        <span><i class="fas fa-eye"></i> 1.5k</span>
+                        <span><i class="fas fa-calendar"></i> 12/10/2025</span>
+                        <span><i class="fas fa-eye"></i> 850</span>
                     </div>
                 </div>
             </a>
@@ -36,7 +36,7 @@
     text-align: center;
     margin-bottom: 40px;
     padding: 40px 0;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     color: white;
     border-radius: 12px;
 }
