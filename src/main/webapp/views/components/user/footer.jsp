@@ -10,7 +10,9 @@
     <!-- Cột 1 -->
     <div class="footer-col">
       <div class="logo">
-        <img src="${pageContext.request.contextPath}/images/codelensnew-logo-chu-ngang.svg" alt="Logo">
+        <a href="${pageContext.request.contextPath}/CodeLensNew">
+          <img src="${pageContext.request.contextPath}/images/codelensnew-logo-chu-ngang.svg" alt="Logo">
+        </a>
       </div>
       <p><i class="fa-solid fa-location-dot"></i> TP. Hồ Chí Minh</p>
       <p><i class="fa-solid fa-phone"></i> 0787.544.232</p>
@@ -28,12 +30,12 @@
     <div class="footer-col">
       <h3>Chủ Đề</h3>
       <ul>
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Công nghệ</a></li>
-        <li><a href="#">Cộng đồng</a></li>
-        <li><a href="#">Bảng tin mới nhất</a></li>
-        <li><a href="#">Khám phá</a></li>
-        <li><a href="#">Liên hệ</a></li>
+        <li><a href="${pageContext.request.contextPath}/CodeLensNew">Trang chủ</a></li>
+        <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=technology">Công nghệ</a></li>
+        <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=programming">Lập trình</a></li>
+        <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=ai">AI & Machine Learning</a></li>
+        <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=blockchain">Blockchain</a></li>
+        <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=startup">Startup</a></li>
       </ul>
     </div>
 
