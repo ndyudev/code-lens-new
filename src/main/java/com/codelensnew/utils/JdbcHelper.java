@@ -3,14 +3,21 @@ package com.codelensnew.utils;
 import java.sql.*;
 
 /**
- * JdbcHelper - Class tiện ích hỗ trợ thao tác với SQL Server Bao gồm: mở kết
+ * JdbcHelper - Class tiện ích hỗ trợ thao tác với MySQL Bao gồm: mở kết
  * nối, execute query, execute update, gọi stored procedure
  */
 public class JdbcHelper {
 
 	// ===== Cấu hình kết nối =====
 	private static final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-	private static final String DBURL = "jdbc:sqlserver://localhost;databaseName=code_lens_new;encrypt=false;";
+	private static final String DBURL = 
+    "jdbc:sqlserver://localhost:1433;"
+  + "databaseName=code_lens_new;"
+  + "encrypt=false;"
+  + "trustServerCertificate=true;"
+  + "useUnicode=true;"
+  + "characterEncoding=UTF-8;";
+
 	private static final String USERNAME = "sa";
 	private static final String PASSWORD = "ndyudev227";
 
@@ -43,7 +50,6 @@ public class JdbcHelper {
 	 */
 	public static int executeUpdate(String sql, Object... values) throws SQLException {
 		try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-
 			setParameters(stmt, values);
 			return stmt.executeUpdate();
 		}

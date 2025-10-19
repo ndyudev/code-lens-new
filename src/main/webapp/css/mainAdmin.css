@@ -1,6 +1,7 @@
-/* Admin layout styles (copied base from user, no slider) */
+/* Admin layout styles */
 @import url("headerUser.css");
 @import url("footerUser.css");
+@import url("variables.css");
 
 .admin-wrapper {
   min-height: 100vh;

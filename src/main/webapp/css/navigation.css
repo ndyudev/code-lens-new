@@ -1,0 +1,73 @@
+/* 🎨 SIMPLE NAVIGATION BAR STYLES */
+
+/* Navigation Container */
+.admin-nav {
+  background: #f8f9fa;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation List */
+.admin-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+}
+
+/* Navigation Items */
+.admin-nav li {
+  /* Simple styling */
+}
+
+/* Navigation Links */
+.admin-nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover Effects */
+.admin-nav a:hover {
+  background: #e5e7eb;
+  color: #333;
+}
+
+/* Active State */
+.admin-nav a.active {
+  background: #e5e7eb;
+  font-weight: bold;
+}
+
+/* FontAwesome Icons Styling */
+.admin-nav a i {
+  font-size: 14px;
+  width: 16px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-nav ul {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .admin-nav a {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}

@@ -1,36 +1,24 @@
 package com.codelensnew.dao;
 
-import java.util.List;
-
 import com.codelensnew.common.dao.BaseDAO;
 import com.codelensnew.entity.Newsletter;
+import java.sql.SQLException;
+import java.util.List;
 
-/**
- * Giao diện DAO cho bảng Newsletter.
- * Kế thừa BaseDAO để dùng sẵn các thao tác CRUD cơ bản.
- */
 public interface NewsletterDAO extends BaseDAO<Newsletter, String> {
-
     /**
-     * Tìm bản ghi theo địa chỉ email.
-     *
-     * @param email địa chỉ email cần tìm
-     * @return newsletter nếu tồn tại, ngược lại trả về null
+     * Tìm newsletter theo email
+     * @param email email cần tìm
+     * @return Newsletter nếu tìm thấy, null nếu không
+     * @throws SQLException
      */
-    Newsletter findByEmail(String email);
-
+    Newsletter findByEmail(String email) throws SQLException;
+    
     /**
-     * Kiểm tra địa chỉ email đã tồn tại trong hệ thống hay chưa.
-     *
-     * @param email địa chỉ email cần kiểm tra
-     * @return true nếu đã tồn tại, false nếu chưa
+     * Lấy danh sách newsletter đang hoạt động
+     * @return List<Newsletter> danh sách newsletter enabled = true
+     * @throws SQLException
      */
-    boolean isEmailExists(String email);
-
-    /**
-     * Lấy danh sách newsletter đang hoạt động (enabled = true).
-     *
-     * @return danh sách newsletter đã bật
-     */
-    List<Newsletter> findAllEnabled();
+    List<Newsletter> findActiveNewsletters() throws SQLException;
+    
 }

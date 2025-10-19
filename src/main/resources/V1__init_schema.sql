@@ -1,39 +1,57 @@
+-- =============================================
+-- Script tạo cơ sở dữ liệu CodeLensNew
+-- Tác giả: Chau Nhat Duy
+-- Ngày tạo: 2025
+-- =============================================
+
 -- Tạo cơ sở dữ liệu (nếu chưa tồn tại)
 CREATE DATABASE code_lens_new;
+GO
+
 USE code_lens_new;
-drop database code_lens_new
-USE PS44284_ChauNhatDuy_PolyCafe_ASM;
+GO
 
 
--- Bảng CATEGORIES (Loại tin)
+-- =============================================
+-- BẢNG CATEGORIES (Loại tin)
+-- =============================================
 CREATE TABLE CATEGORIES (
     Id VARCHAR(20) PRIMARY KEY,
-    Name VARCHAR(100) NOT NULL
+    Name NVARCHAR(100) NOT NULL
 );
+GO
 
--- Bảng USERS (Người dùng)
+-- =============================================
+-- BẢNG USERS (Người dùng)
+-- =============================================
 CREATE TABLE USERS (
     Id VARCHAR(20) PRIMARY KEY,
     Password VARCHAR(100) NOT NULL,
-    Fullname VARCHAR(100) NOT NULL,
+    Fullname NVARCHAR(100) NOT NULL,
     Birthday DATE NOT NULL,
     Gender BIT NOT NULL DEFAULT 0, -- 0 cho nam, 1 cho nữ
     Mobile VARCHAR(15) NOT NULL,
     Email VARCHAR(100) NOT NULL UNIQUE,
     Role BIT NOT NULL DEFAULT 0 -- 0 cho phóng viên, 1 cho quản trị
 );
+GO
 
--- Bảng NEWSLETTERS (Danh sách email nhận tin)
+-- =============================================
+-- BẢNG NEWSLETTERS (Danh sách email nhận tin)
+-- =============================================
 CREATE TABLE NEWSLETTERS (
     Email VARCHAR(100) PRIMARY KEY,
     Enabled BIT NOT NULL DEFAULT 1 -- 1 cho hiệu lực, 0 cho không hiệu lực
 );
+GO
 
--- Bảng NEWS (Tin tức)
+-- =============================================
+-- BẢNG NEWS (Tin tức)
+-- =============================================
 CREATE TABLE NEWS (
     Id VARCHAR(20) PRIMARY KEY,
-    Title VARCHAR(200) NOT NULL,
-    Content TEXT,
+    Title NVARCHAR(200) NOT NULL,
+    Content NVARCHAR(MAX),
     Image VARCHAR(255),
     PostedDate DATE NOT NULL,
     Author VARCHAR(20) NOT NULL,
@@ -43,3 +61,6 @@ CREATE TABLE NEWS (
     FOREIGN KEY (Author) REFERENCES USERS(Id),
     FOREIGN KEY (CategoryId) REFERENCES CATEGORIES(Id)
 );
+GO
+
+PRINT 'Schema tạo thành công!';

@@ -41,10 +41,14 @@
 
     <!-- Cột 3 -->
     <div class="footer-col">
-      <h3>Nhận thông báo về tin mới </h3>
-      <form>
-        <input type="text" placeholder="Email">
-        <button type="submit">Gửi</button>
+      
+      <h3>Đăng ký nhận tin</h3>
+      <p>Nhận thông tin mới nhất từ chúng tôi</p>
+      <form class="newsletter-form" action="${pageContext.request.contextPath}/admin/newsletter/subscribe" method="post">
+        <div class="input-group">
+          <input type="email" name="email" placeholder="Nhập email của bạn" required>
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </div>
       </form>
     </div>
 

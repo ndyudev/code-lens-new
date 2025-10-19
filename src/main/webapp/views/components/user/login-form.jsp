@@ -1,20 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="login-container">
     <div class="auth-card">
         <div class="auth-header">
             <img src="${pageContext.request.contextPath}/images/codelensnew-logo.svg" alt="CodeLens News Logo" class="auth-logo">
-            <h1>Đăng nhập</h1>
+            <h1>Login</h1>
             <p>Vui lòng nhập thông tin để tiếp tục</p>
         </div>
-        <form class="auth-form" action="${pageContext.request.contextPath}/login" method="post">
+        <!-- Hiển thị thông báo -->
+        <c:if test="${not empty message}">
+            <div class="alert ${message.contains('thành công') ? 'alert-success' : 'alert-error'}">
+                <i class="fa-solid ${message.contains('thành công') ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                ${message}
+            </div>
+        </c:if>
+
+        <form class="auth-form" action="${pageContext.request.contextPath}/login/authenticate" method="post">
             <div class="form-group">
                 <label for="username">Tên đăng nhập</label>
-                <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
+                <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" value="${username}" required>
             </div>
             <div class="form-group">
                 <label for="password">Mật khẩu</label>
-                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" value="${password}" required>
             </div>
             <div class="form-options">
                 <label class="checkbox-label">
@@ -22,7 +31,7 @@
                 </label>
                 <a href="#" class="forgot-link">Quên mật khẩu?</a>
             </div>
-            <button type="submit" class="auth-btn">Đăng nhập</button>
+            <button type="submit" class="auth-btn">Login</button>
         </form>
         <div class="auth-footer">
             <p>Chưa có tài khoản? <a href="${pageContext.request.contextPath}/register">Đăng ký ngay</a></p>

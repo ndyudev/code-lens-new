@@ -165,9 +165,29 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
+/* 🔹 User Name */
+.user-name {
+  color: #001a66;
+  border: 2px solid #001a66;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  transition: 0.3s;
+  background: #fff;
+}
+
 /* 🔹 Responsive */
 @media (max-width: 900px) {
   .menu {
     display: none;
+  }
+  
+  .user-name {
+    font-size: 12px;
+    padding: 4px 10px;
   }
 }
