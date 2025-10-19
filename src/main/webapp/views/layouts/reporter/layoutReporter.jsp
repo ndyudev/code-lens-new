@@ -5,15 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Reporter Panel - CodeLens News</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mainAdmin.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/mainReporter.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/post-management.css">
 <link rel="icon" href="${pageContext.request.contextPath}/images/codelensnew-logo.svg">
 <script src="https://kit.fontawesome.com/f4e3fc99b3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="admin-wrapper">
+  <div class="reporter-wrapper">
     <jsp:include page="/views/components/reporter/header.jsp" />
     <jsp:include page="/views/components/reporter/nav.jsp" />
-    <div class="admin-container admin-content">
+    <div class="reporter-container reporter-content">
       <c:set var="pageParam" value="${empty page ? 'dashboard' : page}" />
       <jsp:include page="/views/pages/reporter/${pageParam}.jsp" />
     </div>

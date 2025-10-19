@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <nav class="admin-nav">
   <div class="admin-container">
-    <c:url value="/Reporter" var="reporter" />
     <ul>
-      <li><a href="${reporter}?page=dashboard">Dashboard</a></li>
-      <li><a href="${reporter}?page=post">Đăng bài</a></li>
-      <li><a href="${reporter}?page=change-password">Thay đổi mật khẩu</a></li>
-      <li><a href="${reporter}?page=logout">Đăng xuất</a></li>
+      <li><a href="${pageContext.request.contextPath}/reporter/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="${pageContext.request.contextPath}/reporter/news"><i class="fas fa-edit"></i> Đăng bài</a></li>
+      <li><a href="${pageContext.request.contextPath}/reporter/change-password"><i class="fas fa-key"></i> Thay đổi mật khẩu</a></li>
+      <li><a href="${pageContext.request.contextPath}/logout"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
     </ul>
   </div>
 </nav>

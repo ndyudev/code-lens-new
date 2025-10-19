@@ -1,82 +1,85 @@
 package com.codelensnew.dao;
 
-
-import java.util.List;
-
 import com.codelensnew.common.dao.BaseDAO;
 import com.codelensnew.entity.News;
 
-/**
- * Giao diện DAO cho bảng News, mở rộng từ BaseDAO để dùng chung CRUD
- */
+import java.sql.SQLException;
+import java.util.List;
+
 public interface NewsDAO extends BaseDAO<News, String> {
-
+    
     /**
-     * Lấy danh sách tin hiển thị ngoài trang chủ (home = 1).
-     *
-     * @return danh sách tin hiển thị ngoài trang chủ
+     * Tìm tin tức theo category
+     * @param categoryId
+     * @return List<News>
      */
-    List<News> getAllNewsByHome();
-
+    List<News> findByCategoryId(String categoryId) throws SQLException;
+    
     /**
-     * Lấy top 5 bài viết có lượt xem cao nhất.
-     *
-     * @return danh sách 5 bài viết được xem nhiều nhất
+     * Tìm tin tức theo tác giả
+     * @param author
+     * @return List<News>
      */
-    List<News> getTop5ViewsCount();
-
+    List<News> findByAuthor(String author) throws SQLException;
+    
     /**
-     * Lấy top 5 bài viết mới nhất.
-     *
-     * @return danh sách 5 bài viết mới nhất
+     * Tìm tin tức hiển thị trên trang chủ
+     * @return List<News>
      */
-    List<News> getTop5NewsLatest();
-
+    List<News> findHomeNews() throws SQLException;
+    
     /**
-     * Lấy top 5 bài viết được xem nhiều nhất trong danh sách đã cho.
-     *
-     * @param ids danh sách ID bài viết
-     * @return danh sách top 5 trong số đó có lượt xem cao nhất
+     * Tìm tin tức theo từ khóa trong title
+     * @param keyword
+     * @return List<News>
      */
-    List<News> getTop5NewsViewed(List<String> ids);
-
+    List<News> searchByTitle(String keyword) throws SQLException;
+    
     /**
-     * Lấy tất cả bài viết thuộc một danh mục cụ thể.
-     *
-     * @param categoryId ID danh mục
-     * @return danh sách bài viết theo danh mục
+     * Lấy tin tức mới nhất
+     * @param limit
+     * @return List<News>
      */
-    List<News> getNewsByCategory(String categoryId);
-
+    List<News> findLatestNews(int limit) throws SQLException;
+    
     /**
-     * Cập nhật số lượt xem (viewCount + 1) cho bài viết.
-     *
-     * @param id ID bài viết
-     * @return true nếu cập nhật thành công
+     * Lấy tin tức được xem nhiều nhất
+     * @param limit
+     * @return List<News>
      */
-    boolean updateViewCount(String id);
-
+    List<News> findMostViewedNews(int limit) throws SQLException;
+    
     /**
-     * Lấy tất cả bài viết theo tác giả.
-     *
-     * @param author tên người viết
-     * @return danh sách bài viết của tác giả đó
+     * Tăng view count
+     * @param newsId
+     * @return int
      */
-    List<News> getNewsByAuthor(String author);
-
+    int incrementViewCount(String newsId) throws SQLException;
+    
     /**
-     * Kiểm tra xem có bài viết nào thuộc danh mục này không.
-     *
-     * @param categoryId ID danh mục
-     * @return true nếu có bài viết thuộc danh mục, false nếu không
+     * Duyệt bài viết (set Home = true)
+     * @param newsId
+     * @return int
      */
-    boolean existsByCategoryId(String categoryId);
-
+    int approveNews(String newsId) throws SQLException;
+    
     /**
-     * Kiểm tra xem tác giả có bài viết nào không.
-     *
-     * @param author tên tác giả
-     * @return true nếu có bài viết của tác giả, false nếu không
+     * Từ chối bài viết (set Home = false)
+     * @param newsId
+     * @return int
      */
-    boolean existsByAuthorId(String author);
+    int rejectNews(String newsId) throws SQLException;
+    
+    /**
+     * Lấy tất cả bài viết chờ duyệt (Home = false)
+     * @return List<News>
+     */
+    List<News> findPendingNews() throws SQLException;
+    
+    /**
+     * Tìm tin tức theo category và đã duyệt (Home = true)
+     * @param categoryId
+     * @return List<News>
+     */
+    List<News> findByCategoryIdAndApproved(String categoryId) throws SQLException;
 }

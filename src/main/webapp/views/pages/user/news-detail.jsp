@@ -7,12 +7,8 @@
 	<!-- Breadcrumb -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/news-detail.css">
 	<nav class="breadcrumb">
-		<a href="${pageContext.request.contextPath}/CodeLensNew?tab=home" class="breadcrumb-link">
+		<a href="${pageContext.request.contextPath}/CodeLensNew" class="breadcrumb-link">
 			<i class="fas fa-home"></i> Trang chủ
-		</a>
-		<span class="breadcrumb-separator">/</span>
-		<a href="${pageContext.request.contextPath}/CodeLensNew?tab=technology" class="breadcrumb-link">
-			Công nghệ
 		</a>
 		<span class="breadcrumb-separator">/</span>
 		<span class="breadcrumb-current">Chi tiết tin tức</span>
@@ -22,10 +18,21 @@
 	<article class="news-article">
 		<!-- Article Header -->
 		<header class="article-header">
-			<div class="article-category">
-				<i class="fas fa-microchip"></i>
-				<span>Công nghệ</span>
-	</div>
+		<div class="article-category">
+			<i class="fas fa-microchip"></i>
+			<span>
+				<c:choose>
+					<c:when test="${not empty news}">
+						<c:forEach var="category" items="${categories}">
+							<c:if test="${category.id == news.categoryId}">
+								${category.name}
+							</c:if>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>Công nghệ</c:otherwise>
+				</c:choose>
+			</span>
+		</div>
 			
 			<h1 class="article-title">
 				<c:choose>
@@ -90,12 +97,29 @@
 
 		<!-- Featured Image -->
 		<div class="article-image">
-			<img src="${pageContext.request.contextPath}/images/new-img/CNghe_1.jpg" 
-				 alt="AI bùng nổ toàn cầu" 
-				 class="featured-image">
+			<c:choose>
+				<c:when test="${not empty news && not empty news.image}">
+					<img src="${pageContext.request.contextPath}/images/${news.image}" 
+						 alt="${news.title}" 
+						 class="featured-image"
+						 onerror="this.src='${pageContext.request.contextPath}/images/new-img/CNghe_1.jpg'">
+				</c:when>
+				<c:otherwise>
+					<img src="${pageContext.request.contextPath}/images/new-img/CNghe_1.jpg" 
+						 alt="Default image" 
+						 class="featured-image">
+				</c:otherwise>
+			</c:choose>
 			<div class="image-overlay">
 				<div class="image-caption">
-					Trí tuệ nhân tạo đang thay đổi cách chúng ta sống và làm việc
+					<c:choose>
+						<c:when test="${not empty news}">
+							${news.title}
+						</c:when>
+						<c:otherwise>
+							Trí tuệ nhân tạo đang thay đổi cách chúng ta sống và làm việc
+						</c:otherwise>
+					</c:choose>
 				</div>
 			</div>
 		</div>

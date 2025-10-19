@@ -1,14 +1,6 @@
 /* 🌈 CATEGORY MANAGEMENT - Modern Admin UI */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
-:root {
-    --main: #1e3a8a;
-    --light: #f8fafc;
-    --border: #e2e8f0;
-    --text: #1e293b;
-    --green: #22c55e;
-    --red: #ef4444;
-}
+@import url('variables.css');
 
 * {
     margin: 0;
@@ -112,14 +104,38 @@ body {
     color: #fff;
 }
 
-.btn.add { background: var(--green); }
-.btn.add:hover { background: #16a34a; }
+/* Nút Thêm - Màu xanh lá */
+.btn-primary { 
+    background: #22c55e; 
+    color: #fff;
+    border: 1px solid #22c55e;
+}
+.btn-primary:hover { 
+    background: #16a34a; 
+    border-color: #16a34a;
+}
 
-.btn.update { background: var(--main); }
-.btn.update:hover { background: #1d4ed8; }
+/* Nút Cập nhật - Màu xanh dương */
+.btn-secondary { 
+    background: #1e3a8a; 
+    color: #fff;
+    border: 1px solid #1e3a8a;
+}
+.btn-secondary:hover { 
+    background: #1d4ed8; 
+    border-color: #1d4ed8;
+}
 
-.btn.clear { background: #64748b; }
-.btn.clear:hover { background: #475569; }
+/* Nút Làm mới - Màu xám */
+.btn-outline { 
+    background: #64748b; 
+    color: #fff;
+    border: 1px solid #64748b;
+}
+.btn-outline:hover { 
+    background: #475569; 
+    border-color: #475569;
+}
 
 /* Table */
 .cm-table-section {
@@ -147,7 +163,6 @@ body {
 .cm-table td {
     padding: 12px 16px;
     text-align: center;
-    border-bottom: 1px solid var(--border);
 }
 
 .cm-table th {
@@ -186,21 +201,21 @@ body {
 }
 
 .tbl-btn.edit {
-    background: #facc15;
-    color: #78350f;
+    background: #facc15 !important;
+    color: #78350f !important;
 }
 
 .tbl-btn.edit:hover {
-    background: #eab308;
+    background: #eab308 !important;
 }
 
 .tbl-btn.delete {
-    background: var(--red);
-    color: #fff;
+    background: var(--red) !important;
+    color: #fff !important;
 }
 
 .tbl-btn.delete:hover {
-    background: #dc2626;
+    background: #dc2626 !important;
 }
 
 /* Responsive */

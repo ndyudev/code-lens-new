@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <title>Đổi mật khẩu</title>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/change-password.css" />
-  <script src="https://kit.fontawesome.com/f4e3fc99b3.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <main class="cp-wrapper">
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/change-password.css" />
+<script src="https://kit.fontawesome.com/f4e3fc99b3.js" crossorigin="anonymous"></script>
+
+<div class="cp-container">
     <header class="cp-header">
       <h1><i class="fa-solid fa-lock"></i> Đổi mật khẩu</h1>
       <p>Vui lòng nhập mật khẩu cũ và đặt mật khẩu mới để bảo vệ tài khoản 🔐</p>
@@ -16,19 +16,27 @@
 
     <section class="cp-form">
       <h2><i class="fa-solid fa-key"></i> Nhập thông tin</h2>
-      <form method="post" action="#">
+      <!-- Hiển thị thông báo -->
+      <c:if test="${not empty message}">
+          <div class="cp-alert ${message.startsWith('✅') ? 'success' : 'error'}">
+              <i class="fa-solid ${message.startsWith('✅') ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+              ${message}
+          </div>
+      </c:if>
+
+      <form method="post" action="${pageContext.request.contextPath}/reporter/change-password">
         <div class="cp-grid">
           <div class="cp-group">
             <label><i class="fa-solid fa-key"></i> Mật khẩu cũ</label>
-            <input type="password" placeholder="Nhập mật khẩu cũ" required />
+            <input type="password" name="oldPassword" placeholder="Nhập mật khẩu cũ" required />
           </div>
           <div class="cp-group">
             <label><i class="fa-solid fa-key"></i> Mật khẩu mới</label>
-            <input type="password" placeholder="Nhập mật khẩu mới" required />
+            <input type="password" name="newPassword" placeholder="Nhập mật khẩu mới" required />
           </div>
           <div class="cp-group">
             <label><i class="fa-solid fa-check"></i> Xác nhận mật khẩu mới</label>
-            <input type="password" placeholder="Nhập lại mật khẩu mới" required />
+            <input type="password" name="confirmPassword" placeholder="Nhập lại mật khẩu mới" required />
           </div>
         </div>
 
@@ -38,6 +46,4 @@
         </div>
       </form>
     </section>
-  </main>
-</body>
-</html>
+</div>

@@ -1,8 +1,9 @@
 /* Import tất cả file con */
+@import url("variables.css");
 @import url("headerUser.css");
 @import url("footerUser.css");
 @import url("contentUser.css");
-@import url("changepassword.css");
+@import url("change-password.css");
 @import url("login.css");
 
 
