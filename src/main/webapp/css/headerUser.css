@@ -143,6 +143,31 @@
   transform: rotate(180deg);
 }
 
+/* 🔸 Language Switcher */
+.language-switcher {
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.lang-btn {
+  background: #f8f9fa;
+  color: #333;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+  display: inline-block;
+  border: 1px solid #dee2e6;
+}
+
+.lang-btn:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,123,255,0.3);
+}
+
 /* 🔸 Login */
 .login-btn {
   background: #fff;

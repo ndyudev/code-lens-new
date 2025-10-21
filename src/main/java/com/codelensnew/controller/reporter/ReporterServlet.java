@@ -39,7 +39,7 @@ public class ReporterServlet extends HttpServlet {
             List<Category> categories = categoryDAO.findAll();
             request.setAttribute("categories", categories);
         } catch (Exception e) {
-            e.printStackTrace();
+            // Silent fail
         }
 
         // Set dữ liệu vào request

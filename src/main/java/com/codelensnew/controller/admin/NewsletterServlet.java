@@ -43,28 +43,33 @@ public class NewsletterServlet extends HttpServlet {
             String email = request.getParameter("email");
             
             if (email != null && !email.trim().isEmpty()) {
-                try {
-                    // Kiểm tra email đã tồn tại chưa
-                    Newsletter existingNewsletter = newsletterDAO.findByEmail(email);
-                    
-                    if (existingNewsletter != null) {
-                        // Nếu đã tồn tại nhưng bị disabled, enable lại
-                        if (!existingNewsletter.isEnabled()) {
-                            Newsletter updatedNewsletter = new Newsletter(email, true);
-                            newsletterDAO.update(updatedNewsletter);
-                            message = "✅ Đã kích hoạt lại đăng ký nhận tin cho email: " + email;
+                // Kiểm tra format email
+                if (!isValidEmail(email)) {
+                    message = "❌ Email không đúng định dạng! Vui lòng nhập email hợp lệ.";
+                } else {
+                    try {
+                        // Kiểm tra email đã tồn tại chưa
+                        Newsletter existingNewsletter = newsletterDAO.findByEmail(email);
+                        
+                        if (existingNewsletter != null) {
+                            // Nếu đã tồn tại nhưng bị disabled, enable lại
+                            if (!existingNewsletter.isEnabled()) {
+                                Newsletter updatedNewsletter = new Newsletter(email, true);
+                                newsletterDAO.update(updatedNewsletter);
+                                message = "✅ Đã kích hoạt lại đăng ký nhận tin cho email: " + email;
+                            } else {
+                                message = "ℹ️ Email này đã đăng ký nhận tin rồi!";
+                            }
                         } else {
-                            message = "ℹ️ Email này đã đăng ký nhận tin rồi!";
+                            // Tạo mới
+                            Newsletter newsletter = new Newsletter(email, true);
+                            newsletterDAO.insert(newsletter);
+                            message = "✅ Đăng ký nhận tin thành công cho email: " + email;
                         }
-                    } else {
-                        // Tạo mới
-                        Newsletter newsletter = new Newsletter(email, true);
-                        newsletterDAO.insert(newsletter);
-                        message = "✅ Đăng ký nhận tin thành công cho email: " + email;
+                    } catch (SQLException e) {
+                        // Silent fail
+                        message = "❌ Lỗi hệ thống, vui lòng thử lại sau!";
                     }
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                    message = "❌ Lỗi hệ thống, vui lòng thử lại sau!";
                 }
             } else {
                 message = "❌ Vui lòng nhập email hợp lệ!";
@@ -83,7 +88,7 @@ public class NewsletterServlet extends HttpServlet {
                 newsletterDAO.delete(email);
                 message = "✅ Đã xóa email: " + email;
             } catch (SQLException e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Lỗi khi xóa email: " + e.getMessage();
             }
         }
@@ -112,7 +117,7 @@ public class NewsletterServlet extends HttpServlet {
                         }
                     }
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    // Silent fail
                     message = "❌ Lỗi khi thêm: " + e.getMessage();
                 }
             } else {
@@ -137,7 +142,7 @@ public class NewsletterServlet extends HttpServlet {
                         message = "❌ Cập nhật newsletter thất bại!";
                     }
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    // Silent fail
                     message = "❌ Lỗi khi cập nhật: " + e.getMessage();
                 }
             } else {
@@ -155,7 +160,7 @@ public class NewsletterServlet extends HttpServlet {
                     message = "❌ Không tìm thấy email: " + email;
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Lỗi khi tải thông tin email: " + e.getMessage();
             }
         }
@@ -165,7 +170,7 @@ public class NewsletterServlet extends HttpServlet {
         try {
             newsletters = newsletterDAO.findAll();
         } catch (SQLException e) {
-            e.printStackTrace();
+                    // Silent fail
         }
 
         request.setAttribute("newsletters", newsletters);
@@ -173,5 +178,18 @@ public class NewsletterServlet extends HttpServlet {
         request.setAttribute("message", message);
         request.setAttribute("page", "newsletter-management");
         request.getRequestDispatcher("/views/layouts/admin/layoutAdmin.jsp").forward(request, response);
+    }
+    
+    /**
+     * Kiểm tra email có hợp lệ không
+     */
+    private boolean isValidEmail(String email) {
+        if (email == null || email.trim().isEmpty()) {
+            return false;
+        }
+        
+        // Kiểm tra format email cơ bản
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        return email.matches(emailRegex);
     }
 }

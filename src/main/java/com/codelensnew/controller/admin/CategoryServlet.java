@@ -41,7 +41,7 @@ public class CategoryServlet extends HttpServlet {
         try {
             BeanUtils.populate(form, request.getParameterMap());
         } catch (Exception e) {
-            e.printStackTrace();
+            // Silent fail
         }
         
         // Xử lý GET request cho edit và delete trước
@@ -121,7 +121,7 @@ public class CategoryServlet extends HttpServlet {
             List<Category> categories = categoryDAO.findAll();
             request.setAttribute("categories", categories);
         } catch (Exception e) {
-            e.printStackTrace();
+            // Silent fail
         }
         
         // Forward đến AdminServlet với page=category-management

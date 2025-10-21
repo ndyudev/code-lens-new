@@ -98,7 +98,7 @@ public class LoginServlet extends HttpServlet {
                     return;
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                // Silent fail
                 request.setAttribute("message", "Lỗi hệ thống, vui lòng thử lại!");
                 request.getRequestDispatcher("/CodeLensNew?tab=login").forward(request, response);
                 return;

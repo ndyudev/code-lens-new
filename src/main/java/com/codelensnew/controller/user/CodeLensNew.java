@@ -51,14 +51,16 @@ public class CodeLensNew extends HttpServlet {
             latestNews = newsDAO.findLatestNews(4);
             request.setAttribute("latestNews", latestNews);
             
+            // Bài viết gần đây sẽ được load sau khi xử lý detail
+            
         } catch (Exception e) {
-            System.err.println("Lỗi khi load dữ liệu: " + e.getMessage());
-            e.printStackTrace();
+            // Silent fail
             // Set empty lists để tránh lỗi JSP
             request.setAttribute("categories", categories);
             request.setAttribute("featuredCategories", new ArrayList<>());
             request.setAttribute("mostViewedNews", mostViewedNews);
             request.setAttribute("latestNews", latestNews);
+            request.setAttribute("recentNews", new ArrayList<>());
         }
         
         // Load newsletter message nếu có
@@ -84,6 +86,9 @@ public class CodeLensNew extends HttpServlet {
                     newsDAO.incrementViewCount(newsId);
                     news.setViewCount(news.getViewCount() + 1);
                     request.setAttribute("news", news);
+                    
+                    // Thêm vào danh sách bài viết gần đây của user
+                    addToUserRecentNews(request, newsId);
                 }
             } else if ("category".equals(tab) && categoryId != null && !categoryId.isEmpty()) {
                 // Hiển thị tin tức theo danh mục (chỉ bài đã duyệt)
@@ -95,7 +100,15 @@ public class CodeLensNew extends HttpServlet {
                 request.setAttribute("newsList", newsList);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            // Silent fail
+        }
+
+        // Load bài viết gần đây sau khi đã xử lý detail (để có dữ liệu mới nhất)
+        try {
+            List<News> recentNews = getUserRecentNews(request);
+            request.setAttribute("recentNews", recentNews);
+        } catch (Exception e) {
+            request.setAttribute("recentNews", new ArrayList<>());
         }
 
         // Set dữ liệu vào request
@@ -103,5 +116,103 @@ public class CodeLensNew extends HttpServlet {
 
         // Forward đến layout user
         request.getRequestDispatcher("/views/layouts/user/layoutUser.jsp").forward(request, response);
+    }
+    
+    /**
+     * Lấy danh sách bài viết gần đây của user từ session
+     */
+    @SuppressWarnings("unchecked")
+    private List<News> getUserRecentNews(HttpServletRequest request) {
+        try {
+            // Lấy danh sách ID bài viết đã xem từ session
+            List<String> viewedNewsIds = (List<String>) request.getSession().getAttribute("viewedNewsIds");
+            
+            if (viewedNewsIds == null || viewedNewsIds.isEmpty()) {
+                // Nếu chưa có, trả về 4 bài mới nhất
+                return newsDAO.findLatestNews(4);
+            }
+            
+            // Lấy tối đa 4 bài viết gần đây nhất đã xem
+            List<News> recentNews = new ArrayList<>();
+            int count = 0;
+            
+            // Lấy từ cuối danh sách (bài viết xem gần đây nhất)
+            for (int i = viewedNewsIds.size() - 1; i >= 0 && count < 4; i--) {
+                String newsId = viewedNewsIds.get(i);
+                try {
+                    News news = newsDAO.findById(newsId);
+                    if (news != null) {
+                        recentNews.add(news);
+                        count++;
+                    }
+                } catch (Exception e) {
+                    // Silent fail
+                }
+            }
+            
+            // Nếu không đủ 4 bài, bổ sung bằng bài mới nhất
+            if (recentNews.size() < 4) {
+                List<News> latestNews = newsDAO.findLatestNews(4);
+                for (News news : latestNews) {
+                    if (recentNews.size() >= 4) break;
+                    
+                    // Kiểm tra xem đã có trong danh sách chưa
+                    boolean alreadyExists = false;
+                    for (News existingNews : recentNews) {
+                        if (existingNews.getId().equals(news.getId())) {
+                            alreadyExists = true;
+                            break;
+                        }
+                    }
+                    
+                    if (!alreadyExists) {
+                        recentNews.add(news);
+                    }
+                }
+            }
+            
+            return recentNews;
+            
+        } catch (Exception e) {
+            // Silent fail
+            // Fallback về 4 bài mới nhất
+            try {
+                return newsDAO.findLatestNews(4);
+            } catch (Exception ex) {
+                return new ArrayList<>();
+            }
+        }
+    }
+    
+    /**
+     * Thêm bài viết vào danh sách đã xem của user
+     */
+    @SuppressWarnings("unchecked")
+    private void addToUserRecentNews(HttpServletRequest request, String newsId) {
+        try {
+            // Lấy danh sách hiện tại từ session
+            List<String> viewedNewsIds = (List<String>) request.getSession().getAttribute("viewedNewsIds");
+            
+            if (viewedNewsIds == null) {
+                viewedNewsIds = new ArrayList<>();
+            }
+            
+            // Xóa ID cũ nếu đã tồn tại (để đưa lên đầu)
+            viewedNewsIds.remove(newsId);
+            
+            // Thêm vào cuối danh sách
+            viewedNewsIds.add(newsId);
+            
+            // Giới hạn tối đa 20 bài viết gần đây
+            if (viewedNewsIds.size() > 20) {
+                viewedNewsIds = viewedNewsIds.subList(viewedNewsIds.size() - 20, viewedNewsIds.size());
+            }
+            
+            // Lưu lại vào session
+            request.getSession().setAttribute("viewedNewsIds", viewedNewsIds);
+            
+        } catch (Exception e) {
+            // Silent fail
+        }
     }
 }

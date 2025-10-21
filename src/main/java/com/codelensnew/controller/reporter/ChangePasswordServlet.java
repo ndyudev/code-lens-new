@@ -74,7 +74,7 @@ public class ChangePasswordServlet extends HttpServlet {
                 }
                 
             } catch (Exception e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Có lỗi xảy ra: " + e.getMessage();
             }
         }

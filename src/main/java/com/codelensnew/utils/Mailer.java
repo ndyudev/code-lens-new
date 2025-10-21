@@ -42,7 +42,7 @@ public class Mailer {
             Transport.send(mail);
             return 1; // Thành công
         } catch (Exception e) {
-            e.printStackTrace();
+            // Silent fail
             return -1; // Lỗi
         }
     }
@@ -82,7 +82,7 @@ public class Mailer {
             Transport.send(mail);
             return 1; // Thành công
         } catch (Exception e) {
-            e.printStackTrace();
+            // Silent fail
             return -1; // Lỗi
         }
     }

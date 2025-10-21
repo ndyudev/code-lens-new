@@ -59,7 +59,7 @@ public class AdminServlet extends HttpServlet {
                     message = "✅ Đã xóa bài viết thành công!";
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Lỗi: " + e.getMessage();
             }
         }
@@ -70,7 +70,7 @@ public class AdminServlet extends HttpServlet {
                 userDAO.delete(userId);
                 message = "✅ Đã xóa người dùng thành công!";
             } catch (SQLException e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Lỗi khi xóa người dùng: " + e.getMessage();
             }
         }
@@ -80,7 +80,7 @@ public class AdminServlet extends HttpServlet {
             List<Category> categories = categoryDAO.findAll();
             request.setAttribute("categories", categories);
         } catch (SQLException e) {
-            e.printStackTrace();
+            // Silent fail
         }
 
         // Xử lý logic cho news-management
@@ -132,7 +132,7 @@ public class AdminServlet extends HttpServlet {
                 }
                 request.setAttribute("authors", new ArrayList<>(authors));
             } catch (SQLException e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Lỗi khi tải danh sách bài viết: " + e.getMessage();
             }
         }
@@ -143,7 +143,7 @@ public class AdminServlet extends HttpServlet {
                 List<User> allUsers = userDAO.findAll();
                 request.setAttribute("allUsers", allUsers);
             } catch (SQLException e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Lỗi khi tải danh sách người dùng: " + e.getMessage();
             }
         }
@@ -154,7 +154,7 @@ public class AdminServlet extends HttpServlet {
                 List<Category> categories = categoryDAO.findAll();
                 request.setAttribute("categories", categories);
             } catch (SQLException e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Lỗi khi tải danh sách danh mục: " + e.getMessage();
             }
         }

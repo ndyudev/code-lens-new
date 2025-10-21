@@ -2,6 +2,7 @@
 @import url("headerUser.css");
 @import url("footerUser.css");
 @import url("variables.css");
+@import url("navigation.css");
 
 .reporter-wrapper {
   min-height: 100vh;
