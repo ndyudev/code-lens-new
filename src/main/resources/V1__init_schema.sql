@@ -63,4 +63,3 @@ CREATE TABLE NEWS (
 );
 GO
 
-PRINT 'Schema tạo thành công!';

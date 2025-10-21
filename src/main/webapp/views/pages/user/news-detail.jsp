@@ -207,7 +207,8 @@ function bookmarkArticle() {
 }
 
 function goBack() {
-	window.history.back();
+	// Redirect về trang chủ để load lại aside với dữ liệu mới
+	window.location.href = '${pageContext.request.contextPath}/CodeLensNew';
 }
 
 function printArticle() {

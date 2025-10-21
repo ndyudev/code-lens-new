@@ -69,7 +69,7 @@ public class NewsServlet extends HttpServlet {
                 message = "✅ Xóa bài viết thành công!";
                 form = new News();
             } catch (SQLException e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Lỗi: " + e.getMessage();
             }
         } else if (path.contains("create") || path.contains("update")) {
@@ -135,13 +135,13 @@ public class NewsServlet extends HttpServlet {
                         }
                         
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        // Silent fail
                         message = "❌ Lỗi upload ảnh: " + e.getMessage();
                     }
                 }
                 
             } catch (IllegalAccessException | InvocationTargetException e) {
-                e.printStackTrace();
+                // Silent fail
             }
         }
         
@@ -162,7 +162,7 @@ public class NewsServlet extends HttpServlet {
                     }
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Lỗi: " + e.getMessage();
             }
         } else if (path.contains("update")) {
@@ -171,7 +171,7 @@ public class NewsServlet extends HttpServlet {
                 message = "✅ Cập nhật bài viết thành công!";
                 form = new News();
             } catch (SQLException e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Lỗi: " + e.getMessage();
             }
         } else if (!path.contains("edit") && !path.contains("delete")) {
@@ -191,7 +191,7 @@ public class NewsServlet extends HttpServlet {
                 list = new ArrayList<>(); // Empty list nếu chưa đăng nhập
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+                        // Silent fail
             message = "❌ Lỗi khi tải danh sách bài viết: " + e.getMessage();
         }
         request.setAttribute("list", list);
@@ -201,7 +201,7 @@ public class NewsServlet extends HttpServlet {
         try {
             categories = categoryDAO.findAll();
         } catch (SQLException e) {
-            e.printStackTrace();
+                        // Silent fail
         }
         request.setAttribute("categories", categories);
         

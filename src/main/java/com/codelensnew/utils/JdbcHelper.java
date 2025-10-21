@@ -19,7 +19,7 @@ public class JdbcHelper {
   + "characterEncoding=UTF-8;";
 
 	private static final String USERNAME = "sa";
-	private static final String PASSWORD = "ndyudev227";
+	private static final String PASSWORD = "your_database_password_here";
 
 	// ===== Load driver khi class được nạp =====
 	static {

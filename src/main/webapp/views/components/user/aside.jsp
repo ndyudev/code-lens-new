@@ -70,10 +70,19 @@
     <!-- Bài viết gần đây -->
     <h3 class="aside-user__title">Bài Viết Gần Đây</h3>
     <ul class="aside-user__list">
-      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=1">AI bùng nổ toàn cầu</a></li>
-      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=2">Phát minh y tế thông minh</a></li>
-      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=3">Công nghệ 5G bùng nổ</a></li>
-      <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=4">Blockchain thay đổi tương lai</a></li>
+      <c:choose>
+        <c:when test="${not empty recentNews}">
+          <c:forEach var="news" items="${recentNews}" begin="0" end="3">
+            <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=${news.id}">${news.title.length() > 30 ? news.title.substring(0, 30).concat('...') : news.title}</a></li>
+          </c:forEach>
+        </c:when>
+        <c:otherwise>
+          <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=1">AI bùng nổ toàn cầu</a></li>
+          <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=2">Phát minh y tế thông minh</a></li>
+          <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=3">Công nghệ 5G bùng nổ</a></li>
+          <li><a href="${pageContext.request.contextPath}/CodeLensNew?tab=news&id=4">Blockchain thay đổi tương lai</a></li>
+        </c:otherwise>
+      </c:choose>
     </ul>
   </div>
 </div>

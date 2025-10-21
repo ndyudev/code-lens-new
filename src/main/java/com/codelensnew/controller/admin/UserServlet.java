@@ -48,7 +48,7 @@ public class UserServlet extends HttpServlet {
             // Populate form với BeanUtils
             BeanUtils.populate(form, request.getParameterMap());
         } catch (IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
+            // Silent fail
         }
         
         // Tạo đối tượng truy cập table User
@@ -94,7 +94,7 @@ public class UserServlet extends HttpServlet {
                 }
                 form = new User();
             } catch (Exception e) {
-                e.printStackTrace();
+                // Silent fail
                 message = "❌ Lỗi: " + e.getMessage();
             }
         } else {
@@ -110,7 +110,7 @@ public class UserServlet extends HttpServlet {
             List<User> list = dao.findAll();
             request.setAttribute("allUsers", list);
         } catch (Exception e) {
-            e.printStackTrace();
+            // Silent fail
             request.setAttribute("allUsers", new java.util.ArrayList<>());
         }
         

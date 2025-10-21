@@ -44,7 +44,7 @@
   </div>
 
   <div class="news-footer">
-    <a href="content.jsp" class="back-btn">
+    <a href="${pageContext.request.contextPath}/CodeLensNew" class="back-btn">
       <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách
     </a>
   </div>
